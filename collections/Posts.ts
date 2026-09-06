@@ -19,14 +19,13 @@ export const Posts: CollectionConfig = {
   hooks: {
     beforeValidate: [
       ({ data }) => {
-        if (data && (!data.slug || /\s/.test(data.slug))) {
-          // Auto-generate slug from title if slug is empty or contains spaces
-          if (data.title) {
-            data.slug = toSlug(data.title)
-          }
-        } else if (data?.slug) {
-          // Sanitise whatever was typed (lowercase + hyphens)
-          data.slug = toSlug(data.slug)
+        if (!data) return data
+        // Always sanitise slug; if empty/whitespace-only, derive from title
+        const raw = (data.slug || '').trim()
+        if (!raw && data.title) {
+          data.slug = toSlug(data.title)
+        } else if (raw) {
+          data.slug = toSlug(raw)
         }
         return data
       },
@@ -47,10 +46,9 @@ export const Posts: CollectionConfig = {
       name: 'slug',
       type: 'text',
       label: 'Slug',
-      required: true,
       unique: true,
       admin: {
-        description: 'Auto-generated from the title. You can override it — it will be lowercased and spaces will become hyphens automatically.',
+        description: 'Leave blank to auto-generate from title. Will be lowercased with hyphens.',
       },
     },
     {

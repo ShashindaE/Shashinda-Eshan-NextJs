@@ -235,7 +235,7 @@ function renderNode(node, key) {
       // node.value can be: a full media object {id, url, alt, width, height}
       // or just an id number if depth was too shallow.
       const media = node.value
-      const src = typeof media === 'object' ? media?.url : null
+      const src = typeof media === 'object' ? (media?.thumbnailURL || media?.url) : null
       const alt = typeof media === 'object' ? (media?.alt || '') : ''
       const width = typeof media === 'object' ? media?.width : undefined
       const height = typeof media === 'object' ? media?.height : undefined

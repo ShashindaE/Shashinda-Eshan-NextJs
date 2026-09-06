@@ -73,7 +73,7 @@ function BlogList({ posts }) {
               day: '2-digit', month: 'short', year: 'numeric',
             })
           : '';
-        const coverUrl = post.coverImage?.url || null;
+        const coverUrl = post.coverImage?.thumbnailURL || post.coverImage?.url || null;
         const href = `/blog/${post.slug}`;
         return (
           <article key={post.id} className="blog-card">

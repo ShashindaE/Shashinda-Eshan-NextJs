@@ -29,7 +29,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: post.title,
       description: post.excerpt || '',
-      images: post.coverImage?.url ? [{ url: post.coverImage.url }] : [],
+      images: post.coverImage?.thumbnailURL ? [{ url: post.coverImage.thumbnailURL }] : post.coverImage?.url ? [{ url: post.coverImage.url }] : [],
     },
   }
 }
@@ -109,10 +109,10 @@ export default async function BlogPost({ params }) {
         </header>
 
         {/* ─ Cover image: shown only if author opted in via admin checkbox ─ */}
-        {post.showCoverInArticle && post.coverImage?.url && (
+        {post.showCoverInArticle && (post.coverImage?.thumbnailURL || post.coverImage?.url) && (
           <figure className="blog-cover-figure">
             <img
-              src={post.coverImage.url}
+              src={post.coverImage.thumbnailURL || post.coverImage.url}
               alt={post.coverImage.alt || post.title}
               className="blog-cover-img"
             />

@@ -18,7 +18,7 @@ export function BlogList({ posts }) {
             })
           : null
 
-        const coverUrl = post.coverImage?.url || null
+        const coverUrl = post.coverImage?.thumbnailURL || post.coverImage?.url || null
         const href = `/blog/${post.slug}`
 
         return (

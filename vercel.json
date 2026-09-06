@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "app/(payload)/admin/[[...segments]]/route": {
+      "maxDuration": 60,
+      "memory": 1024
+    },
+    "app/(payload)/api/[...slug]/route": {
+      "maxDuration": 60
+    }
+  }
+}

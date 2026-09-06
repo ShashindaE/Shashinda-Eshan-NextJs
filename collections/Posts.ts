@@ -1,10 +1,36 @@
 import type { CollectionConfig } from 'payload'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
+function toSlug(str: string): string {
+  return str
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')   // remove special chars except hyphens
+    .replace(/[\s_]+/g, '-')    // spaces/underscores → hyphens
+    .replace(/-+/g, '-')        // collapse multiple hyphens
+    .replace(/^-+|-+$/g, '')    // trim leading/trailing hyphens
+}
+
 export const Posts: CollectionConfig = {
   slug: 'posts',
   access: {
     read: () => true,
+  },
+  hooks: {
+    beforeValidate: [
+      ({ data }) => {
+        if (data && (!data.slug || /\s/.test(data.slug))) {
+          // Auto-generate slug from title if slug is empty or contains spaces
+          if (data.title) {
+            data.slug = toSlug(data.title)
+          }
+        } else if (data?.slug) {
+          // Sanitise whatever was typed (lowercase + hyphens)
+          data.slug = toSlug(data.slug)
+        }
+        return data
+      },
+    ],
   },
   admin: {
     useAsTitle: 'title',
@@ -24,7 +50,7 @@ export const Posts: CollectionConfig = {
       required: true,
       unique: true,
       admin: {
-        description: 'URL-friendly version of the title. E.g. "why-brands-start-with-a-question"',
+        description: 'Auto-generated from the title. You can override it — it will be lowercased and spaces will become hyphens automatically.',
       },
     },
     {

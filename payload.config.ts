@@ -5,6 +5,11 @@ import { cloudinaryStorage } from 'payload-cloudinary'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import dns from 'dns'
+
+// Force IPv4 for DNS lookups — needed for Vercel → Supabase connectivity
+// (Vercel resolves the Supabase hostname to IPv6 which is unreachable)
+dns.setDefaultResultOrder('ipv4first')
 
 import { Users } from './collections/Users'
 import { Posts } from './collections/Posts'

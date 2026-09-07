@@ -5,13 +5,13 @@ import ScrollExperience from './ScrollExperience';
 
 const sections = ['home', 'about', 'projects', 'work', 'testimonials', 'blog', 'contact'];
 const experiences = [
-  ['2025 - Present', 'Alpha Wellness Sensations', 'Social Media Manager & Strategist / Paid Marketing Specialist', 'Develop and manage digital & social strategies for European markets; plan content and lead-generation campaigns; achieved ~EUR 0.71 cost-per-lead through optimisation.'],
-  ['2023 - 2025', 'Cristal Colombo', 'Social Media Manager & Paid Marketing Specialist', 'Promoted to Digital Media Manager responsibilities; led paid marketing and digital media across multiple brands; helped deliver Lia Sri Lanka’s highest-ever sales day and built growth strategies for launch brands.'],
-  ['2022 - 2024', 'MTV Channel Pvt. Ltd. (Sirasa TV)', 'Assistant Producer - Digital Content (FTC)', 'Managed YouTube, TikTok, Facebook and Instagram channels; launched and grew TikTok from 0 to ~500k followers; contributed to The Voice Sri Lanka S2 with concepts, content and animations.'],
-  ['2020 - 2022', 'TechnoB Apps', 'Graphic Designer & Video Editor', 'Produced video and visual content; grew YouTube from ~50k to 300k+ subscribers; created conversion-focused advertising creatives.'],
-  ['2019 - 2020', 'Luwise Design Agency', 'Brand Identity Designer & Animator', 'Delivered high-volume brand identity, logo and illustration work (estimated 900–1,100 projects in 8–10 months); created brand assets and web visuals.'],
-  ['2019', 'Orel IT Pvt. Ltd.', 'Associate Image Processor / AI Data Annotation', 'Worked on AI data annotation and image-processing projects; achieved 300% of assigned KPI and consistently exceeded targets.'],
-  ['2018', 'Printex Lanka Pvt. Ltd.', 'Junior Graphic Designer', 'Designed 700+ projects while working closely with the marketing team to deliver production-ready assets.'],
+  ['2025 - Present', 'Alpha Wellness Sensations', 'Social Media Manager & Strategist / Paid Marketing Specialist', 'Develop and manage digital & social strategies for European markets; plan content and lead-generation campaigns; achieved ~EUR 0.71 cost-per-lead through optimisation; performance marketing, campaign design, conversion tracking.','Digital Marketing Strategy, Paid Marketing, Lead Generation, Performance Marketing, GA4, GTM, Conversion Tracking'],
+  ['2023 - 2025', 'Cristal Colombo', 'Social Media Manager & Paid Marketing Specialist', 'Promoted to Digital Media Manager responsibilities; led paid marketing and digital media across multiple brands; helped deliver Lia Sri Lanka’s highest-ever sales day through integrated campaigns and audience optimisation.', 'Paid Media, Social Media Strategy, Campaign Management, Creative Direction, Audience Growth'],
+  ['2022 - 2024', 'MTV Channel Pvt. Ltd. (Sirasa TV)', 'Assistant Producer - Digital Content (FTC)', 'Managed YouTube, TikTok, Facebook and Instagram channels; launched and grew TikTok from 0 to ~500k followers; contributed to The Voice Sri Lanka S2 with concepts, content, program promotion and animations.', 'TikTok Marketing, YouTube Growth, Content Strategy, Motion Graphics, Social-First Storytelling'],
+  ['2020 - 2022', 'TechnoB Apps', 'Graphic Designer & Video Editor', 'Produced video and visual content; grew YouTube from ~50k to 300k+ subscribers through content strategy and production; created conversion-focused advertising creatives and channel optimisation.', 'Video Production, YouTube Growth, Motion Graphics, Video Editing, Creative Strategy'],
+  ['2019 - 2020', 'Luwise Design Agency', 'Brand Identity Designer & Animator', 'Delivered high-volume brand identity, logo and illustration work (estimated 900–1,100 projects in 8–10 months); created brand assets and supported web projects.', 'Brand Identity, Logo Design, Illustration, High-Volume Production, Visual Systems'],
+  ['2019', 'Orel IT Pvt. Ltd.', 'Associate Image Processor / AI Data Annotation', 'Worked on AI data annotation and image-processing tasks for Mobilely; achieved 300% of assigned KPI and regularly earned performance-based commissions.', 'AI Data Annotation, Image Processing, KPI Optimisation, Data Quality'],
+  ['2018', 'Printex Lanka Pvt. Ltd.', 'Junior Graphic Designer', 'Designed 700+ projects for the marketing and production teams; delivered print and digital assets at scale.', 'Graphic Design, Print Production, Marketing Collateral, Batch Production'],
 ];
 const testimonials = [
   ['As a photographer, visuals are everything to me. Your creativity and attention to detail elevated my brand.', 'Nimash Malshan', "7's Studio"],
@@ -166,7 +166,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
           <a className="download" href="#contact">Download resume &#8595;</a>
         </div>
         <div className="timeline">
-          {experiences.map(([year, company, role, detail], index) => (
+          {experiences.map(([year, company, role, detail, keywords], index) => (
             <article className="experience" key={company}>
               <span>0{index + 1}</span>
               <time>{year}</time>
@@ -174,6 +174,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
                 <h3>{company}</h3>
                 <p className="role">{role}</p>
                 <p>{detail}</p>
+                {keywords && <p className="exp-keywords">{keywords}</p>}
               </div>
               <b>&#8599;</b>
             </article>
@@ -198,7 +199,18 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
       <section className={`${pageClass(5)} blog`} id="blog">
         <div className="section-label"><span>05</span> Recent thinking</div>
         <h2>Notes from<br /><em>the studio.</em></h2>
-        <BlogList posts={blogPosts} />
+        <div className="blog-content">
+          <BlogList posts={blogPosts} />
+          <aside className="featured-post" aria-labelledby="featured-title">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&q=60&auto=format&fit=crop" alt="Featured" />
+            <div className="featured-body">
+              <div className="featured-meta">Case Study • Growth</div>
+              <h3 id="featured-title">Scaling Social Growth: TikTok 0 → ~500k & YouTube 50k → 300k+</h3>
+              <p className="featured-excerpt">A practical breakdown of the content, cadence, and paid strategies used to launch channels, optimise reach and hit aggressive KPI targets — includes campaign examples and creative templates.</p>
+              <a className="featured-cta" href="/blog/featured-growth-case-study">Read case study ↗</a>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section className={`${pageClass(6)} contact ${contactImageExpanded ? 'image-expanded' : ''}`} id="contact">

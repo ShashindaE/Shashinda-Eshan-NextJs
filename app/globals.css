@@ -852,3 +852,20 @@ html:has(.blog-post-page) { overflow: auto !important; }
   .blog-card-excerpt { display: none; }
   .blog-card-cta { width: 28px; height: 28px; font-size: 12px; }
 }
+
+/* Blog two-column layout: main list + featured post (portfolio homepage) */
+.blog-content { display:grid; grid-template-columns:1fr 340px; gap:3.5vw; align-items:start; margin-top:40px; }
+.featured-post { background:#1f2020; border-radius:8px; overflow:hidden; color:var(--paper); box-shadow:0 8px 30px rgba(0,0,0,.6); }
+.featured-post img { width:100%; height:180px; object-fit:cover; display:block; }
+.featured-body { padding:18px; }
+.featured-meta { font:10px 'DM Mono'; color:#9aa19a; text-transform:uppercase; margin-bottom:10px; }
+.featured-post h3 { margin:0 0 8px; font-size:18px; line-height:1.05; }
+.featured-excerpt { color:#c7c9c5; font-size:13px; line-height:1.5; margin:0 0 14px; }
+.featured-cta { color:var(--accent); font:11px 'DM Mono'; text-transform:uppercase; }
+
+.exp-keywords { margin-top:10px; font:11px 'DM Mono'; color:#7a7d76; text-transform:uppercase; letter-spacing:.06em; }
+
+@media (max-width:900px) {
+  .blog-content { grid-template-columns:1fr; }
+  .featured-post { order:2; margin-top:22px; }
+}

@@ -23,7 +23,7 @@ function ArrowLink({ children, href = '#' }) {
   return <a className="arrow-link" href={href}>{children}<span>&#8599;</span></a>;
 }
 
-function Header({ activeSection }) {
+function Header({ activeSection, mobileMenuOpen, onToggleMenu }) {
   return (
     <header className={`site-header ${activeSection > 0 ? 'is-solid' : ''}`}>
       <a className="brand" href="#home">
@@ -35,14 +35,43 @@ function Header({ activeSection }) {
         ))}
       </nav>
       <a className="phone" href="tel:+94769415015">+94 76 941 5015</a>
+      <button
+        type="button"
+        className={`hamburger ${mobileMenuOpen ? 'is-active' : ''}`}
+        aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={mobileMenuOpen}
+        onClick={onToggleMenu}
+      >
+        <span /><span /><span />
+      </button>
     </header>
+  );
+}
+
+function MobileMenu({ isOpen, activeSection, onClose }) {
+  return (
+    <div className={`mobile-menu ${isOpen ? 'is-open' : ''}`} aria-hidden={!isOpen}>
+      <nav aria-label="Mobile navigation">
+        {sections.map((section, index) => (
+          <a className={activeSection === index ? 'active' : ''} href={`#${section}`} key={section} onClick={onClose}>{section}</a>
+        ))}
+      </nav>
+      <div className="mobile-menu-footer">
+        <a className="mobile-menu-phone" href="tel:+94769415015">+94 76 941 5015</a>
+        <div className="mobile-menu-socials">
+          <a href="https://www.facebook.com/shashindaesh/" aria-label="Facebook">f</a>
+          <a href="https://www.linkedin.com/in/shashinda-eshan" aria-label="LinkedIn">in</a>
+          <a href="https://www.instagram.com/shashindaeshan" aria-label="Instagram">&#9678;</a>
+        </div>
+      </div>
+    </div>
   );
 }
 
 function FixedUI({ activeSection }) {
   return (
     <>
-      <aside className="social-sidebar">
+      <aside className="social-sidebar" aria-hidden="true">
         <span className="sidebar-line" />
         <a href="https://www.facebook.com/shashindaesh/" aria-label="Facebook">f</a>
         <a href="https://www.linkedin.com/in/shashinda-eshan" aria-label="LinkedIn">in</a>
@@ -247,11 +276,22 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
 }
 
 export function PortfolioClient({ blogPosts }) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <ScrollExperience sections={sections}>
       {(activeSection, incomingSection, isTransitioning) => (
         <>
-          <Header activeSection={incomingSection ?? activeSection} />
+          <Header
+            activeSection={incomingSection ?? activeSection}
+            mobileMenuOpen={mobileMenuOpen}
+            onToggleMenu={() => setMobileMenuOpen((open) => !open)}
+          />
+          <MobileMenu
+            isOpen={mobileMenuOpen}
+            activeSection={incomingSection ?? activeSection}
+            onClose={() => setMobileMenuOpen(false)}
+          />
           <FixedUI activeSection={incomingSection ?? activeSection} />
           <PageContent
             activeSection={activeSection}

@@ -5,12 +5,13 @@ import ScrollExperience from './ScrollExperience';
 
 const sections = ['home', 'about', 'projects', 'work', 'testimonials', 'blog', 'contact'];
 const experiences = [
-  ['2023 - Present', 'Cristal Colombo', 'Social Media Manager & Paid Marketing Specialist', 'Developed paid marketing strategies to boost brand visibility.'],
-  ['2022 - 2023', 'MTV Channel Pvt. Ltd', 'Assistant Producer - Digital Content', 'Created concepts, animations, and digital platforms for The Voice Sri Lanka.'],
-  ['2020 - 2023', 'Technob Apps', 'Graphic Designer and Video Editor', 'Designed graphics and videos for clients and a 300k+ subscriber channel.'],
-  ['2020', 'Luwise Design Agency', 'Brand Identity Designer and Animator', 'Created branding concepts and visuals for growing businesses.'],
-  ['2019', 'Orel IT Pvt. Ltd', 'Associate Image Processor', 'Designed graphics and contributed to the official website.'],
-  ['2018', 'Printex Lanka Pvt. Ltd', 'Junior Graphic Designer', 'Completed over 700 projects with the marketing team.'],
+  ['2025 - Present', 'Alpha Wellness Sensations', 'Social Media Manager & Strategist / Paid Marketing Specialist', 'Develop and manage digital & social strategies for European markets; plan content and lead-generation campaigns; achieved ~EUR 0.71 cost-per-lead through optimisation.'],
+  ['2023 - 2025', 'Cristal Colombo', 'Social Media Manager & Paid Marketing Specialist', 'Promoted to Digital Media Manager responsibilities; led paid marketing and digital media across multiple brands; helped deliver Lia Sri Lanka’s highest-ever sales day and built growth strategies for launch brands.'],
+  ['2022 - 2024', 'MTV Channel Pvt. Ltd. (Sirasa TV)', 'Assistant Producer - Digital Content (FTC)', 'Managed YouTube, TikTok, Facebook and Instagram channels; launched and grew TikTok from 0 to ~500k followers; contributed to The Voice Sri Lanka S2 with concepts, content and animations.'],
+  ['2020 - 2022', 'TechnoB Apps', 'Graphic Designer & Video Editor', 'Produced video and visual content; grew YouTube from ~50k to 300k+ subscribers; created conversion-focused advertising creatives.'],
+  ['2019 - 2020', 'Luwise Design Agency', 'Brand Identity Designer & Animator', 'Delivered high-volume brand identity, logo and illustration work (estimated 900–1,100 projects in 8–10 months); created brand assets and web visuals.'],
+  ['2019', 'Orel IT Pvt. Ltd.', 'Associate Image Processor / AI Data Annotation', 'Worked on AI data annotation and image-processing projects; achieved 300% of assigned KPI and consistently exceeded targets.'],
+  ['2018', 'Printex Lanka Pvt. Ltd.', 'Junior Graphic Designer', 'Designed 700+ projects while working closely with the marketing team to deliver production-ready assets.'],
 ];
 const testimonials = [
   ['As a photographer, visuals are everything to me. Your creativity and attention to detail elevated my brand.', 'Nimash Malshan', "7's Studio"],

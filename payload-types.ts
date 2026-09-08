@@ -70,6 +70,8 @@ export interface Config {
     users: User;
     posts: Post;
     media: Media;
+    categories: Category;
+    tags: Tag;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -80,6 +82,8 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    tags: TagsSelect<false> | TagsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -153,9 +157,9 @@ export interface Post {
   id: number;
   title: string;
   /**
-   * URL-friendly version of the title. E.g. "why-brands-start-with-a-question"
+   * Leave blank to auto-generate from title. Will be lowercased with hyphens.
    */
-  slug: string;
+  slug?: string | null;
   status: 'draft' | 'published';
   publishedDate?: string | null;
   /**
@@ -189,6 +193,18 @@ export interface Post {
    * E.g. "5 min read"
    */
   readingTime?: string | null;
+  /**
+   * Mark this post as featured. Useful for highlighting on the site later.
+   */
+  featured?: boolean | null;
+  /**
+   * Assign one or more categories to this post.
+   */
+  categories?: (number | Category)[] | null;
+  /**
+   * Add topic tags to this post.
+   */
+  tags?: (number | Tag)[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -274,6 +290,38 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: number;
+  name: string;
+  /**
+   * Leave blank to auto-generate from name.
+   */
+  slug?: string | null;
+  /**
+   * Optional description for this category.
+   */
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags".
+ */
+export interface Tag {
+  id: number;
+  name: string;
+  /**
+   * Leave blank to auto-generate from name.
+   */
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -307,6 +355,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: number | Category;
+      } | null)
+    | ({
+        relationTo: 'tags';
+        value: number | Tag;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -387,6 +443,9 @@ export interface PostsSelect<T extends boolean = true> {
   showCoverInArticle?: T;
   content?: T;
   readingTime?: T;
+  featured?: T;
+  categories?: T;
+  tags?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -425,6 +484,27 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tags_select".
+ */
+export interface TagsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

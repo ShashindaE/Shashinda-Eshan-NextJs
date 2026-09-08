@@ -42,7 +42,6 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL,
     },
-    push: true, // auto-create missing tables for new collections (remove after first deploy)
   }),
 
   plugins: [

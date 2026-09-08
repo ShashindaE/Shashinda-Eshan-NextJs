@@ -894,8 +894,9 @@ html:has(.blog-post-page) { overflow: auto !important; }
 
 /* ===================== Contact section: fix missing padding (was reset to 0, causing the
    heading to sit behind the fixed header and content to collide with the social sidebar) ===================== */
-.contact.slide-page { padding:150px 9vw 60px; }
-.contact-layout { max-width:960px; gap:6vw; grid-template-columns:0.85fr 1fr; }
+.contact.slide-page { padding:130px 9vw 60px; }
+.contact.slide-page h2 { font-size:clamp(38px,4.4vw,72px); line-height:.95; margin:18px 0 26px; }
+.contact-layout { max-width:960px; gap:6vw; grid-template-columns:0.85fr 1fr; margin-top:20px; }
 .contact-form { margin-left:auto; }
 
 @media (max-width:800px) {

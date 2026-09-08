@@ -33,7 +33,7 @@ export const Posts: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'status', 'publishedDate'],
+    defaultColumns: ['title', 'featured', 'status', 'publishedDate'],
   },
   fields: [
     {
@@ -112,6 +112,39 @@ export const Posts: CollectionConfig = {
       label: 'Reading Time',
       admin: {
         description: 'E.g. "5 min read"',
+      },
+    },
+    // ── Organisation ──────────────────────────────────────────────
+    {
+      name: 'featured',
+      type: 'checkbox',
+      label: 'Featured',
+      defaultValue: false,
+      admin: {
+        description: 'Mark this post as featured. Useful for highlighting on the site later.',
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'categories',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: true,
+      label: 'Categories',
+      admin: {
+        description: 'Assign one or more categories to this post.',
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'tags',
+      type: 'relationship',
+      relationTo: 'tags',
+      hasMany: true,
+      label: 'Tags',
+      admin: {
+        description: 'Add topic tags to this post.',
+        position: 'sidebar',
       },
     },
   ],

@@ -14,6 +14,8 @@ dns.setDefaultResultOrder('ipv4first')
 import { Users } from './collections/Users'
 import { Posts } from './collections/Posts'
 import { Media } from './collections/Media'
+import { Categories } from './collections/Categories'
+import { Tags } from './collections/Tags'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -26,7 +28,7 @@ export default buildConfig({
     },
   },
 
-  collections: [Users, Posts, Media],
+  collections: [Users, Posts, Media, Categories, Tags],
 
   editor: lexicalEditor({}),
 

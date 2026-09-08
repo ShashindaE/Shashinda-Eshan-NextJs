@@ -207,7 +207,7 @@ body { background:#111215; }
 .contact-top, .contact-layout, .contact-image-hint { position:relative; z-index:1; }
 .contact.slide-page .contact-top { min-height:0; border:0; }
 .contact.slide-page .contact-top h2 { margin:28px 0 28px; }
-.contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:start; max-width:800px; margin-top:30px; }
+.contact-layout { display:grid; grid-template-columns:0.85fr 1fr; gap:6vw; align-items:center; max-width:1180px; margin-top:12px; }
 .contact.slide-page .contact-bottom { display:block; padding:0; }
 .contact.slide-page .contact-bottom p { color:#d0d0cb; margin-top:12px; }
 .reveal-three { animation-delay:.5s; }
@@ -392,10 +392,10 @@ body { background:#111215; }
 .contact-top, .contact-layout, .contact-image-hint { position:relative; z-index:1; }
 .contact.slide-page .contact-top { min-height:0; border:0; }
 .contact.slide-page .contact-top h2 { margin:28px 0 28px; }
-.contact-layout { display:grid; grid-template-columns:1fr 1fr; gap:8vw; align-items:start; max-width:800px; margin-top:30px; }
+.contact-layout { display:grid; grid-template-columns:0.85fr 1fr; gap:6vw; align-items:center; max-width:1180px; margin-top:12px; }
 .contact.slide-page .contact-bottom { display:block; padding:0; }
 .contact.slide-page .contact-bottom p { color:#d0d0cb; margin-top:12px; }
-.contact-form { width:min(100%,370px); padding:20px 24px 22px; background:rgba(10,11,12,.52); backdrop-filter:blur(8px); border:1px solid rgba(238,233,223,.2); }
+.contact-form { width:min(100%,520px); padding:22px 28px 24px; background:rgba(10,11,12,.52); backdrop-filter:blur(8px); border:1px solid rgba(238,233,223,.2); }
 .form-title { margin:0 0 20px; font-size:13px; line-height:1.35; font-weight:700; }.form-title span { color:var(--accent); }
 .contact-form label { display:block; color:#aaa; font:9px 'DM Mono'; text-transform:uppercase; margin-top:13px; }.contact-form input,.contact-form textarea { display:block; width:100%; margin-top:8px; padding:9px 0; border:0; border-bottom:1px solid #555; outline:0; resize:none; background:transparent; color:var(--paper); font:12px 'Manrope'; }.contact-form input:focus,.contact-form textarea:focus { border-color:var(--accent); }.contact-form input::placeholder,.contact-form textarea::placeholder { color:#888; }.contact-form > button { margin-top:18px; border:0; padding:11px 20px; background:var(--accent); color:white; font:10px 'DM Mono'; text-transform:uppercase; cursor:pointer; }.contact-form > button span { margin-left:15px; font-size:15px; }.contact-image-trigger { position:absolute; inset:0; z-index:0; border:0; padding:0; background:transparent; cursor:zoom-in; }.image-expanded .contact-image-trigger { cursor:zoom-out; }.contact-image-hint { margin:25px 0 0; color:#aaa; font:9px 'DM Mono'; text-transform:uppercase; }.contact-image-hint span { color:var(--accent); font-size:16px; }
 @media (max-width:800px) { .contact-layout { grid-template-columns:1fr; gap:20px; margin-top:18px; }.contact-form { width:100%; padding:14px 18px; }.contact.slide-page .contact-top h2 { font-size:54px; margin:20px 0; }.contact-image-hint { margin-top:18px; } }
@@ -894,20 +894,21 @@ html:has(.blog-post-page) { overflow: auto !important; }
 
 /* ===================== Contact section: fix missing padding (was reset to 0, causing the
    heading to sit behind the fixed header and content to collide with the social sidebar) ===================== */
-.contact.slide-page { padding:104px 9vw 26px; }
-.contact.slide-page h2 { font-size:clamp(36px,4vw,64px); line-height:.95; margin:14px 0 16px; }
+.contact.slide-page { padding:96px 9vw 40px; }
+.contact.slide-page h2 { font-size:clamp(36px,4vw,64px); line-height:.95; margin:10px 0 24px; }
 
-/* Lock to one screen (same technique as the hero) and use the freed-up width for a bigger form */
+/* Lock to one screen (same technique as the hero) and vertically center the whole block so
+   leftover space is balanced above/below instead of trapped inside the form as dead air. */
 @media (min-width:801px) {
-  .contact.slide-page { overflow:hidden; height:100%; max-height:100%; }
-  .contact-layout { margin-top:14px; }
-  .contact-form { padding:18px 32px 20px; }
+  .contact.slide-page { overflow:hidden; height:100%; max-height:100%; display:flex; flex-direction:column; justify-content:center; }
+  .contact-layout { margin-top:44px; }
+  .contact-form { padding:26px 34px; }
   .form-title { margin:0 0 14px; }
   .contact-form label { margin-top:10px; }
-  .contact-form > button { margin-top:14px; }
+  .contact-form > button { margin-top:18px; }
 }
 .contact-layout { max-width:1180px; width:100%; gap:5vw; grid-template-columns:0.8fr 1fr; align-items:center; }
-.contact.slide-page .contact-bottom { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.contact.slide-page .contact-bottom { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-self:center; }
 .contact.slide-page .contact-bottom div:nth-child(2) { margin-top:0; }
 .contact-form { width:100%; max-width:none; margin-left:auto; }
 .form-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }

@@ -892,7 +892,12 @@ html:has(.blog-post-page) { overflow: auto !important; }
   .mobile-menu-socials a:hover { color:var(--accent); }
 }
 
-/* ===================== Contact section: mobile alignment fixes ===================== */
+/* ===================== Contact section: fix missing padding (was reset to 0, causing the
+   heading to sit behind the fixed header and content to collide with the social sidebar) ===================== */
+.contact.slide-page { padding:150px 9vw 60px; }
+.contact-layout { max-width:960px; gap:6vw; grid-template-columns:0.85fr 1fr; }
+.contact-form { margin-left:auto; }
+
 @media (max-width:800px) {
   .contact.slide-page { padding:112px 7vw 50px !important; }
   .contact.slide-page .contact-top { width:auto; max-width:100%; }
@@ -902,4 +907,10 @@ html:has(.blog-post-page) { overflow: auto !important; }
 @media (max-width:480px) {
   .contact.slide-page { padding:104px 6vw 40px !important; }
   .contact.slide-page .contact-top h2 { font-size:clamp(36px,11vw,48px); }
+}
+
+/* ===================== Mobile: fixed corner widgets shouldn't cover scrollable section content ===================== */
+@media (max-width:800px) {
+  .copyright, .language { display:none; }
+  .slide-page { padding-bottom:60px; }
 }

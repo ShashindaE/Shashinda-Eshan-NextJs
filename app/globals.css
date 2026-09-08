@@ -894,16 +894,32 @@ html:has(.blog-post-page) { overflow: auto !important; }
 
 /* ===================== Contact section: fix missing padding (was reset to 0, causing the
    heading to sit behind the fixed header and content to collide with the social sidebar) ===================== */
-.contact.slide-page { padding:130px 9vw 60px; }
-.contact.slide-page h2 { font-size:clamp(38px,4.4vw,72px); line-height:.95; margin:18px 0 26px; }
-.contact-layout { max-width:960px; gap:6vw; grid-template-columns:0.85fr 1fr; margin-top:20px; }
-.contact-form { margin-left:auto; }
+.contact.slide-page { padding:104px 9vw 26px; }
+.contact.slide-page h2 { font-size:clamp(36px,4vw,64px); line-height:.95; margin:14px 0 16px; }
+
+/* Lock to one screen (same technique as the hero) and use the freed-up width for a bigger form */
+@media (min-width:801px) {
+  .contact.slide-page { overflow:hidden; height:100%; max-height:100%; }
+  .contact-layout { margin-top:14px; }
+  .contact-form { padding:18px 32px 20px; }
+  .form-title { margin:0 0 14px; }
+  .contact-form label { margin-top:10px; }
+  .contact-form > button { margin-top:14px; }
+}
+.contact-layout { max-width:1180px; width:100%; gap:5vw; grid-template-columns:0.8fr 1fr; align-items:center; }
+.contact.slide-page .contact-bottom { display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.contact.slide-page .contact-bottom div:nth-child(2) { margin-top:0; }
+.contact-form { width:100%; max-width:none; margin-left:auto; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+.form-row label { margin-top:13px; }
 
 @media (max-width:800px) {
   .contact.slide-page { padding:112px 7vw 50px !important; }
   .contact.slide-page .contact-top { width:auto; max-width:100%; }
+  .contact.slide-page .contact-bottom { display:block; }
   .contact.slide-page .contact-bottom div:nth-child(2) { margin-top:18px; }
   .contact-layout { grid-template-columns:1fr; gap:26px; max-width:100%; }
+  .form-row { grid-template-columns:1fr; gap:0; }
 }
 @media (max-width:480px) {
   .contact.slide-page { padding:104px 6vw 40px !important; }

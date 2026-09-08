@@ -242,7 +242,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
         </div>
       </section>
 
-      <section className={`${pageClass(6)} contact ${contactImageExpanded ? 'image-expanded' : ''}`} id="contact">
+      <section className={`${pageClass(6)} contact ${contactImageExpanded ? 'image-expanded' : ''}`} id="contact" data-scrollable="false">
         <div className="contact-top">
           <p className="eyebrow">06 / Get in touch</p>
           <h2>Let&apos;s make<br /><em>something real.</em></h2>
@@ -261,9 +261,11 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
           </div>
           <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
             <p className="form-title">Let&apos;s grab a coffee and turn ideas<br />into reality <span>chat with me.</span></p>
-            <label>Name<input name="name" type="text" placeholder="Your name" /></label>
-            <label>Email<input name="email" type="email" placeholder="Your email" /></label>
-            <label>Message<textarea name="message" placeholder="Message" rows="3" /></label>
+            <div className="form-row">
+              <label>Name<input name="name" type="text" placeholder="Your name" /></label>
+              <label>Email<input name="email" type="email" placeholder="Your email" /></label>
+            </div>
+            <label>Message<textarea name="message" placeholder="Message" rows="2" /></label>
             <button type="submit">Contact me <span>&#8599;</span></button>
           </form>
         </div>

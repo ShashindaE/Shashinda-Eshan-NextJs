@@ -9,12 +9,15 @@ async function getBlogPosts() {
       collection: 'posts',
       where: { status: { equals: 'published' } },
       sort: '-publishedDate',
-      limit: 5,
+      limit: 8,
       depth: 1,
     })
-    return docs
+    // Prefer an explicitly featured post; fall back to the most recent one.
+    const featuredPost = docs.find((doc) => doc.featured) || docs[0] || null
+    const posts = docs.filter((doc) => doc.id !== featuredPost?.id).slice(0, 5)
+    return { posts, featuredPost }
   } catch {
-    return []
+    return { posts: [], featuredPost: null }
   }
 }
 
@@ -26,6 +29,6 @@ export const metadata = {
 export const revalidate = 60
 
 export default async function Home() {
-  const blogPosts = await getBlogPosts();
-  return <PortfolioClient blogPosts={blogPosts} />;
+  const { posts, featuredPost } = await getBlogPosts();
+  return <PortfolioClient blogPosts={posts} featuredPost={featuredPost} />;
 }

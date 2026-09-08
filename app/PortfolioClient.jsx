@@ -136,7 +136,29 @@ function BlogList({ posts }) {
 }
 
 
-function PageContent({ activeSection, incomingSection, isTransitioning, blogPosts }) {
+function FeaturedPost({ post }) {
+  if (!post) return null;
+  const coverUrl = post.coverImage?.thumbnailURL || post.coverImage?.url || null;
+  const categoryNames = (post.categories || []).map((c) => c?.name).filter(Boolean);
+  const meta = categoryNames.length ? categoryNames.join(' • ') : 'Featured';
+  const tagNames = (post.tags || []).map((t) => t?.name).filter(Boolean);
+  return (
+    <aside className="featured-post" aria-labelledby="featured-title">
+      {coverUrl && <img src={coverUrl} alt={post.title} />}
+      <div className="featured-body">
+        <div className="featured-meta">{meta}</div>
+        <h3 id="featured-title">{post.title}</h3>
+        {post.excerpt && <p className="featured-excerpt">{post.excerpt}</p>}
+        {tagNames.length > 0 && (
+          <p className="featured-tags">{tagNames.map((tag) => `#${tag}`).join('  ')}</p>
+        )}
+        <a className="featured-cta" href={`/blog/${post.slug}`}>Read case study &#8599;</a>
+      </div>
+    </aside>
+  );
+}
+
+function PageContent({ activeSection, incomingSection, isTransitioning, blogPosts, featuredPost }) {
   const pageClass = (index) =>
     `slide-page ${activeSection === index ? 'is-current' : ''} ${isTransitioning && activeSection === index ? 'is-leaving' : ''} ${isTransitioning && incomingSection === index ? 'is-incoming' : ''}`;
   const [contactImageExpanded, setContactImageExpanded] = useState(false);
@@ -230,15 +252,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
         <h2>Notes from<br /><em>the studio.</em></h2>
         <div className="blog-content">
           <BlogList posts={blogPosts} />
-          <aside className="featured-post" aria-labelledby="featured-title">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=1200&q=60&auto=format&fit=crop" alt="Featured" />
-            <div className="featured-body">
-              <div className="featured-meta">Case Study • Growth</div>
-              <h3 id="featured-title">Scaling Social Growth: TikTok 0 → ~500k & YouTube 50k → 300k+</h3>
-              <p className="featured-excerpt">A practical breakdown of the content, cadence, and paid strategies used to launch channels, optimise reach and hit aggressive KPI targets — includes campaign examples and creative templates.</p>
-              <a className="featured-cta" href="/blog/featured-growth-case-study">Read case study ↗</a>
-            </div>
-          </aside>
+          <FeaturedPost post={featuredPost} />
         </div>
       </section>
 
@@ -265,6 +279,16 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
               <label>Name<input name="name" type="text" placeholder="Your name" /></label>
               <label>Email<input name="email" type="email" placeholder="Your email" /></label>
             </div>
+            <label>Purpose
+              <select name="purpose" defaultValue="">
+                <option value="" disabled>What&apos;s this about?</option>
+                <option value="project">Project inquiry</option>
+                <option value="job">Job opportunity</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="general">General question</option>
+                <option value="other">Other</option>
+              </select>
+            </label>
             <label>Message<textarea name="message" placeholder="Message" rows="2" /></label>
             <button type="submit">Contact me <span>&#8599;</span></button>
           </form>
@@ -277,7 +301,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
   );
 }
 
-export function PortfolioClient({ blogPosts }) {
+export function PortfolioClient({ blogPosts, featuredPost }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -300,6 +324,7 @@ export function PortfolioClient({ blogPosts }) {
             incomingSection={incomingSection}
             isTransitioning={isTransitioning}
             blogPosts={blogPosts}
+            featuredPost={featuredPost}
           />
         </>
       )}

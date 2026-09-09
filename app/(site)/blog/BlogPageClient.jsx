@@ -78,7 +78,7 @@ export default function BlogPageClient({ posts = [], categories = [] }) {
   const navLinks = [
     { label: 'Home', href: '/#home' },
     { label: 'About', href: '/#about' },
-    { label: 'Projects', href: '/#projects' },
+    { label: 'Services', href: '/#services' },
     { label: 'Work', href: '/#work' },
     { label: 'Blog', href: '/blog', active: true },
     { label: 'Contact', href: '/#contact' },
@@ -90,7 +90,7 @@ export default function BlogPageClient({ posts = [], categories = [] }) {
       <header className="blog-site-header">
         <a className="blog-site-brand" href="/">
           <img
-            src="https://shashinda.com/wp-content/uploads/2024/12/Untitled-December-22-2024-at-21.28.33-2.png"
+            src="/logo-light.png"
             alt="Shashinda Eshan"
             className="blog-site-logo"
           />
@@ -414,7 +414,7 @@ export default function BlogPageClient({ posts = [], categories = [] }) {
             <nav className="blog-footer-links" aria-label="Footer navigation">
               <a href="/">Home</a>
               <a href="/#about">About</a>
-              <a href="/#projects">Projects</a>
+              <a href="/#services">Services</a>
               <a href="/#work">Work</a>
               <a href="/blog">Blog</a>
               <a href="/#contact">Contact</a>

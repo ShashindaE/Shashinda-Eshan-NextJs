@@ -45,6 +45,11 @@ export default async function BlogPost({ params }) {
       })
     : null
 
+  const categoryNames = (post.categories || [])
+    .map((c) => (typeof c === 'object' ? c?.name : c))
+    .filter(Boolean)
+  const categoryLabel = categoryNames.length > 0 ? categoryNames.join(' • ') : 'Story'
+
   return (
     <div className="blog-post-page">
 
@@ -52,7 +57,7 @@ export default async function BlogPost({ params }) {
       <header className="blog-site-header">
         <a className="blog-site-brand" href="/">
           <img
-            src="https://shashinda.com/wp-content/uploads/2024/12/Untitled-December-22-2024-at-21.28.33-2.png"
+            src="/logo-dark.png"
             alt="Shashinda Eshan"
             className="blog-site-logo"
           />
@@ -60,7 +65,7 @@ export default async function BlogPost({ params }) {
         <nav className="blog-site-nav" aria-label="Site navigation">
           <a href="/#home">Home</a>
           <a href="/#about">About</a>
-          <a href="/#projects">Projects</a>
+          <a href="/#services">Services</a>
           <a href="/#work">Work</a>
           <a href="/blog" className="active">Blog</a>
           <a href="/#contact">Contact</a>
@@ -86,7 +91,7 @@ export default async function BlogPost({ params }) {
         <header className="blog-header">
           <div className="blog-label">
             <span className="blog-label-dot" aria-hidden="true" />
-            Essay
+            {categoryLabel}
           </div>
 
           <h1 className="blog-title">{post.title}</h1>

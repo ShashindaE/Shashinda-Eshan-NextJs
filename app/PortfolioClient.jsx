@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ScrollExperience from './ScrollExperience';
 
-const sections = ['home', 'about', 'projects', 'work', 'testimonials', 'blog', 'contact'];
+const sections = ['home', 'about', 'services', 'work', 'testimonials', 'blog', 'contact'];
 const experiences = [
   ['2025 - Present', 'Alpha Wellness Sensations', 'Social Media Manager & Strategist / Paid Marketing Specialist', 'Develop and manage digital & social strategies for European markets; plan content and lead-generation campaigns; achieved ~EUR 0.71 cost-per-lead through optimisation; performance marketing, campaign design, conversion tracking.','Digital Marketing Strategy, Paid Marketing, Lead Generation, Performance Marketing, GA4, GTM, Conversion Tracking'],
   ['2023 - 2025', 'Cristal Colombo', 'Social Media Manager & Paid Marketing Specialist', 'Promoted to Digital Media Manager responsibilities; led paid marketing and digital media across multiple brands; helped deliver Lia Sri Lanka’s highest-ever sales day through integrated campaigns and audience optimisation.', 'Paid Media, Social Media Strategy, Campaign Management, Creative Direction, Audience Growth'],
@@ -18,6 +18,313 @@ const testimonials = [
   ['The paid campaigns and creative strategies brought incredible results and helped us reach a broader audience.', 'Shashika Ravindra', 'SS Accessories'],
   ['The social media campaigns and motion graphics created amazing engagement and visibility for my apps.', 'Shanika Tharanga', 'Technob Apps'],
 ];
+
+const servicesData = [
+  {
+    num: '01',
+    category: 'BRAND',
+    title: 'Build a brand people remember.',
+    description:
+      'A strong brand is more than a logo. I help shape the strategy, identity and visual language that make a business recognizable and meaningful.',
+    items: [
+      'Brand strategy',
+      'Visual identity',
+      'Logo & identity systems',
+      'Creative direction',
+      'Brand guidelines',
+    ],
+    badge: 'Brand Strategy & Identity',
+    metric: '900+ Brand Assets Delivered',
+  },
+  {
+    num: '02',
+    category: 'DIGITAL',
+    title: 'Turn your brand into a digital experience.',
+    description:
+      'From focused landing pages to complete business websites, I design and develop digital experiences that look great, communicate clearly and work for the people using them.',
+    items: [
+      'Web design',
+      'WordPress development',
+      'Next.js websites',
+      'Landing pages',
+      'E-commerce',
+      'UI/UX',
+    ],
+    badge: 'Websites & Digital Experiences',
+    metric: 'Performance & Conversion Focused',
+  },
+  {
+    num: '03',
+    category: 'GROWTH',
+    title: 'Put your brand in front of the right people.',
+    description:
+      'I combine creative thinking with digital marketing to help brands reach their audience, generate leads and turn attention into measurable results.',
+    items: [
+      'Digital marketing',
+      'Social media strategy',
+      'Paid advertising',
+      'Lead generation',
+      'Conversion optimization',
+      'Analytics',
+    ],
+    badge: 'Digital Marketing & Growth',
+    metric: '~EUR 0.71 Cost-Per-Lead Achieved',
+  },
+  {
+    num: '04',
+    category: 'CREATE',
+    title: 'Make people stop scrolling.',
+    description:
+      'From campaign visuals to social content, I create visual communication designed to capture attention while staying connected to the bigger brand.',
+    items: [
+      'Graphic design',
+      'Campaign creatives',
+      'Video editing',
+      'Motion graphics',
+      'Social content',
+      'Advertising creatives',
+    ],
+    badge: 'Creative & Graphic Design',
+    metric: 'Conversion-Driven Visuals',
+  },
+  {
+    num: '05',
+    category: '3D',
+    title: 'Make products and ideas feel real.',
+    description:
+      'I use 3D to create visuals that would be difficult, expensive or impossible to capture traditionally, from product visualization to animated brand experiences.',
+    items: [
+      '3D modeling',
+      'Product visualization',
+      '3D animation',
+      'CGI',
+      'Product renders',
+      '3D web experiences',
+    ],
+    badge: '3D Design & Motion',
+    metric: 'Photorealistic & Interactive',
+  },
+  {
+    num: '06',
+    category: 'CONTENT',
+    title: 'Tell stories worth paying attention to.',
+    description:
+      'Good content isn\'t just about making something look good. It\'s about having something worth saying and presenting it in a way people want to watch.',
+    items: [
+      'Content strategy',
+      'Short-form video',
+      'Brand storytelling',
+      'YouTube content',
+      'Promotional videos',
+      'Social-first content',
+    ],
+    badge: 'Content & Video Production',
+    metric: '500k+ Followers & Audience Growth',
+  },
+];
+
+function ServiceVisual({ index }) {
+  if (index === 0) {
+    return (
+      <div className="service-visual-box visual-brand">
+        <div className="visual-grid-bg" />
+        <div className="visual-brand-circle" />
+        <div className="visual-brand-square" />
+        <div className="visual-brand-mark">SE</div>
+        <div className="visual-brand-palette">
+          <span style={{ background: '#941908' }} />
+          <span style={{ background: '#eee9df' }} />
+          <span style={{ background: '#252628' }} />
+        </div>
+      </div>
+    );
+  }
+  if (index === 1) {
+    return (
+      <div className="service-visual-box visual-digital">
+        <div className="visual-browser-bar">
+          <span /><span /><span />
+          <div className="visual-browser-url">shashinda.design</div>
+        </div>
+        <div className="visual-browser-content">
+          <div className="visual-wire-hero" />
+          <div className="visual-wire-cards">
+            <span /><span /><span />
+          </div>
+          <div className="visual-code-pill">&lt;Next.js /&gt;</div>
+        </div>
+      </div>
+    );
+  }
+  if (index === 2) {
+    return (
+      <div className="service-visual-box visual-growth">
+        <div className="visual-chart-wrap">
+          <div className="visual-chart-bars">
+            <div className="bar" style={{ height: '35%' }} />
+            <div className="bar" style={{ height: '55%' }} />
+            <div className="bar" style={{ height: '75%' }} />
+            <div className="bar highlight" style={{ height: '100%' }} />
+          </div>
+          <div className="visual-trend-line" />
+        </div>
+        <div className="visual-stat-pill">
+          <span className="stat-value">+300%</span>
+          <span className="stat-label">Conversion &amp; Reach</span>
+        </div>
+      </div>
+    );
+  }
+  if (index === 3) {
+    return (
+      <div className="service-visual-box visual-create">
+        <div className="visual-canvas-layer layer-back" />
+        <div className="visual-canvas-layer layer-front">
+          <div className="visual-timeline-track">
+            <div className="track-head" />
+            <div className="track-keyframes">
+              <span /><span /><span /><span />
+            </div>
+          </div>
+        </div>
+        <div className="visual-tool-pill">Motion &amp; Visual Design</div>
+      </div>
+    );
+  }
+  if (index === 4) {
+    return (
+      <div className="service-visual-box visual-3d">
+        <div className="visual-3d-scene">
+          <div className="cube-wireframe">
+            <div className="cube-face front" />
+            <div className="cube-face back" />
+            <div className="cube-face right" />
+            <div className="cube-face left" />
+            <div className="cube-face top" />
+            <div className="cube-face bottom" />
+          </div>
+          <div className="visual-3d-axis" />
+        </div>
+        <div className="visual-cgi-pill">CGI &bull; 3D Modeling</div>
+      </div>
+    );
+  }
+  return (
+    <div className="service-visual-box visual-content">
+      <div className="visual-phone-frame">
+        <div className="visual-phone-notch" />
+        <div className="visual-soundwaves">
+          <span style={{ animationDelay: '0.1s' }} />
+          <span style={{ animationDelay: '0.3s' }} />
+          <span style={{ animationDelay: '0.2s' }} />
+          <span style={{ animationDelay: '0.4s' }} />
+          <span style={{ animationDelay: '0.15s' }} />
+        </div>
+        <div className="visual-video-badge">500k+ Views</div>
+      </div>
+    </div>
+  );
+}
+
+function ServicesSection({ pageClass }) {
+  const [activeService, setActiveService] = useState(0);
+
+  return (
+    <section className={`${pageClass} services`} id="services">
+      <div className="section-label"><span>02</span> Services</div>
+
+      <div className="services-heading">
+        <div>
+          <p className="services-eyebrow">SERVICES</p>
+          <h2>
+            What I can<br />
+            <em>build with you.</em>
+          </h2>
+        </div>
+        <p className="services-lead">
+          I combine strategy, design, technology and marketing to turn ideas into brands,
+          digital experiences and content that actually have a purpose.
+        </p>
+      </div>
+
+      <div className="services-layout">
+        <div className="services-list" role="list">
+          {servicesData.map((service, index) => {
+            const isActive = activeService === index;
+            return (
+              <div
+                key={service.num}
+                className={`service-row ${isActive ? 'is-active' : ''}`}
+                onMouseEnter={() => setActiveService(index)}
+                onClick={() => setActiveService(index)}
+                role="listitem"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveService(index);
+                  }
+                }}
+              >
+                <div className="service-row-header">
+                  <span className="service-num">{service.num}</span>
+                  <span className="service-cat">{service.category}</span>
+                  <h3 className="service-title">{service.title}</h3>
+                  <span className="service-arrow" aria-hidden="true">&#8599;</span>
+                </div>
+
+                <div className="service-expanded">
+                  <p className="service-desc">{service.description}</p>
+                  <div className="service-tags">
+                    {service.items.map((item) => (
+                      <span className="service-tag" key={item}>
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <aside className="services-preview-panel" aria-live="polite">
+          <div className="preview-watermark" aria-hidden="true">
+            {servicesData[activeService].num}
+          </div>
+          <div className="preview-header">
+            <div className="preview-badge">
+              <span className="preview-dot" aria-hidden="true" />
+              {servicesData[activeService].badge}
+            </div>
+            <h4 className="preview-title">{servicesData[activeService].title}</h4>
+            <p className="preview-desc">{servicesData[activeService].description}</p>
+          </div>
+
+          <div className="preview-visual-area">
+            <ServiceVisual index={activeService} />
+          </div>
+
+          <div className="preview-footer">
+            <div className="preview-metric">
+              <span className="metric-dot" />
+              <span>{servicesData[activeService].metric}</span>
+            </div>
+            <ArrowLink href="#contact">Discuss this service</ArrowLink>
+          </div>
+        </aside>
+      </div>
+
+      <div className="services-footer">
+        <div className="services-footer-copy">
+          <h3>Let&apos;s build something.</h3>
+          <p>Have an idea, a problem to solve, or a brand that needs a new direction?</p>
+        </div>
+        <ArrowLink href="#contact">Start a conversation</ArrowLink>
+      </div>
+    </section>
+  );
+}
 
 function ArrowLink({ children, href = '#' }) {
   return <a className="arrow-link" href={href}>{children}<span>&#8599;</span></a>;
@@ -192,7 +499,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
           <h2>Innovative designs.<br /><em>Smarter solutions.</em><br />Proven strategies.</h2>
           <div className="intro-side">
             <p>I specialize in 3D design, AI-driven web solutions, and branding strategies to create impactful experiences that drive results and elevate brands.</p>
-            <ArrowLink href="#projects">Explore my work</ArrowLink>
+            <ArrowLink href="#services">Explore what I do</ArrowLink>
           </div>
         </div>
         <div className="metrics">
@@ -202,6 +509,8 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
         </div>
       </section>
 
+      {/* Projects section preserved for future updates */}
+      {/*
       <section className={`${pageClass(2)} projects`} id="projects">
         <div className="section-label"><span>02</span> Selected projects</div>
         <div className="project-intro">
@@ -214,6 +523,9 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
           <article><span>03 / Campaign design</span><h3>7&apos;s Studio</h3><b>&#8599;</b></article>
         </div>
       </section>
+      */}
+
+      <ServicesSection pageClass={pageClass(2)} />
 
       <section className={`${pageClass(3)} work`} id="work">
         <div className="section-label"><span>03</span> Professional background</div>

@@ -21,6 +21,7 @@ const testimonials = [
 
 const servicesData = [
   {
+    key: 'brand',
     num: '01',
     category: 'BRAND',
     title: 'Build a brand people remember.',
@@ -37,6 +38,7 @@ const servicesData = [
     metric: '900+ Brand Assets Delivered',
   },
   {
+    key: 'digital',
     num: '02',
     category: 'DIGITAL',
     title: 'Turn your brand into a digital experience.',
@@ -54,6 +56,7 @@ const servicesData = [
     metric: 'Performance & Conversion Focused',
   },
   {
+    key: 'growth',
     num: '03',
     category: 'GROWTH',
     title: 'Put your brand in front of the right people.',
@@ -71,6 +74,7 @@ const servicesData = [
     metric: '~EUR 0.71 Cost-Per-Lead Achieved',
   },
   {
+    key: 'create',
     num: '04',
     category: 'CREATE',
     title: 'Make people stop scrolling.',
@@ -88,6 +92,7 @@ const servicesData = [
     metric: 'Conversion-Driven Visuals',
   },
   {
+    key: '3d',
     num: '05',
     category: '3D',
     title: 'Make products and ideas feel real.',
@@ -105,6 +110,7 @@ const servicesData = [
     metric: 'Photorealistic & Interactive',
   },
   {
+    key: 'content',
     num: '06',
     category: 'CONTENT',
     title: 'Tell stories worth paying attention to.',
@@ -226,8 +232,15 @@ function ServiceVisual({ index }) {
   );
 }
 
-function ServicesSection({ pageClass }) {
+function ServicesSection({ pageClass, onSelectService }) {
   const [activeService, setActiveService] = useState(0);
+
+  const handleServiceClick = (serviceKey, index) => {
+    setActiveService(index);
+    if (onSelectService) {
+      onSelectService(serviceKey);
+    }
+  };
 
   return (
     <section className={`${pageClass} services`} id="services">
@@ -252,17 +265,17 @@ function ServicesSection({ pageClass }) {
           {servicesData.map((service, index) => {
             const isActive = activeService === index;
             return (
-              <div
+              <a
                 key={service.num}
+                href="#contact"
                 className={`service-row ${isActive ? 'is-active' : ''}`}
                 onMouseEnter={() => setActiveService(index)}
-                onClick={() => setActiveService(index)}
+                onClick={() => handleServiceClick(service.key, index)}
                 role="listitem"
                 tabIndex={0}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    setActiveService(index);
+                    handleServiceClick(service.key, index);
                   }
                 }}
               >
@@ -282,8 +295,12 @@ function ServicesSection({ pageClass }) {
                       </span>
                     ))}
                   </div>
+                  <div className="service-row-cta">
+                    <span>Inquire about {service.category.toLowerCase()}</span>
+                    <span className="service-cta-arrow" aria-hidden="true">&#8599;</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
@@ -310,7 +327,12 @@ function ServicesSection({ pageClass }) {
               <span className="metric-dot" />
               <span>{servicesData[activeService].metric}</span>
             </div>
-            <ArrowLink href="#contact">Discuss this service</ArrowLink>
+            <ArrowLink
+              href="#contact"
+              onClick={() => handleServiceClick(servicesData[activeService].key, activeService)}
+            >
+              Discuss this service
+            </ArrowLink>
           </div>
         </aside>
       </div>
@@ -326,8 +348,12 @@ function ServicesSection({ pageClass }) {
   );
 }
 
-function ArrowLink({ children, href = '#' }) {
-  return <a className="arrow-link" href={href}>{children}<span>&#8599;</span></a>;
+function ArrowLink({ children, href = '#', onClick }) {
+  return (
+    <a className="arrow-link" href={href} onClick={onClick}>
+      {children}<span>&#8599;</span>
+    </a>
+  );
 }
 
 function Header({ activeSection, mobileMenuOpen, onToggleMenu }) {
@@ -474,6 +500,13 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
   const pageClass = (index) =>
     `slide-page ${activeSection === index ? 'is-current' : ''} ${isTransitioning && activeSection === index ? 'is-leaving' : ''} ${isTransitioning && incomingSection === index ? 'is-incoming' : ''}`;
   const [contactImageExpanded, setContactImageExpanded] = useState(false);
+  const [contactPurpose, setContactPurpose] = useState('');
+  const [sending, setSending] = useState(false);
+  const [sendStatus, setSendStatus] = useState(null);
+
+  const handleSelectService = (serviceKey) => {
+    setContactPurpose(serviceKey);
+  };
 
   return (
     <>
@@ -525,7 +558,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
       </section>
       */}
 
-      <ServicesSection pageClass={pageClass(2)} />
+      <ServicesSection pageClass={pageClass(2)} onSelectService={handleSelectService} />
 
       <section className={`${pageClass(3)} work`} id="work">
         <div className="section-label"><span>03</span> Professional background</div>
@@ -577,31 +610,79 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
       </section>
 
       <section className={`${pageClass(6)} contact ${contactImageExpanded ? 'image-expanded' : ''}`} id="contact" data-scrollable="false">
-        <div className="contact-top">
-          <p className="eyebrow">06 / Get in touch</p>
-          <h2>Let&apos;s make<br /><em>something real.</em></h2>
-          <ArrowLink href="mailto:shashindaesh@gmail.com">Start a conversation</ArrowLink>
-        </div>
         <div className="contact-layout">
-          <div className="contact-bottom">
-            <div>
-              <span className="small-label">Based in</span>
-              <p>167/1, Mulatiyana, Kapugoda<br />Western Province, Sri Lanka</p>
+          <div className="contact-info">
+            <div className="contact-top">
+              <p className="eyebrow">06 / Get in touch</p>
+              <h2>Let&apos;s make<br /><em>something real.</em></h2>
+              <ArrowLink href="mailto:shashindaesh@gmail.com">Start a conversation</ArrowLink>
             </div>
-            <div>
-              <span className="small-label">Reach me</span>
-              <p>+94 76 941 5015<br />shashindaesh@gmail.com</p>
+            <div className="contact-bottom">
+              <div>
+                <span className="small-label">Based in</span>
+                <p>167/1, Mulatiyana, Kapugoda<br />Western Province, Sri Lanka</p>
+              </div>
+              <div>
+                <span className="small-label">Reach me</span>
+                <p>+94 76 941 5015<br />shashindaesh@gmail.com</p>
+              </div>
             </div>
           </div>
-          <form className="contact-form" onSubmit={(event) => event.preventDefault()}>
+          <form
+            className="contact-form"
+            onSubmit={async (event) => {
+                event.preventDefault();
+                if (sending) return;
+                setSending(true);
+                setSendStatus(null);
+                const form = event.currentTarget;
+                try {
+                  const formData = new FormData(form);
+                const body = Object.fromEntries(formData.entries());
+                console.info('[contact] Sending', body)
+                const res = await fetch('/api/contact', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify(body),
+                });
+                const text = await res.text().catch(() => '')
+                let parsed
+                try { parsed = JSON.parse(text) } catch (e) { parsed = null }
+                console.info('[contact] Response', { status: res.status, ok: res.ok, text, parsed })
+                const success = parsed && parsed.ok === true
+                if (success) {
+                  setSendStatus('success');
+                  form.reset();
+                  setContactPurpose('');
+                } else {
+                  setSendStatus('error');
+                }
+              } catch (err) {
+                console.error('[contact] Fetch error', err)
+                setSendStatus('error');
+              } finally {
+                setSending(false);
+              }
+            }}
+          >
             <p className="form-title">Let&apos;s grab a coffee and turn ideas<br />into reality <span>chat with me.</span></p>
             <div className="form-row">
               <label>Name<input name="name" type="text" placeholder="Your name" /></label>
               <label>Email<input name="email" type="email" placeholder="Your email" /></label>
             </div>
             <label>Purpose
-              <select name="purpose" defaultValue="">
+              <select
+                name="purpose"
+                value={contactPurpose}
+                onChange={(event) => setContactPurpose(event.target.value)}
+              >
                 <option value="" disabled>What&apos;s this about?</option>
+                <option value="brand">01 / Brand Strategy &amp; Identity</option>
+                <option value="digital">02 / Websites &amp; Digital Experiences</option>
+                <option value="growth">03 / Digital Marketing &amp; Growth</option>
+                <option value="create">04 / Creative &amp; Graphic Design</option>
+                <option value="3d">05 / 3D Design &amp; Motion</option>
+                <option value="content">06 / Content &amp; Video</option>
                 <option value="project">Project inquiry</option>
                 <option value="job">Job opportunity</option>
                 <option value="collaboration">Collaboration</option>
@@ -610,7 +691,9 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
               </select>
             </label>
             <label>Message<textarea name="message" placeholder="Message" rows="2" /></label>
-            <button type="submit">Contact me <span>&#8599;</span></button>
+            <button type="submit" disabled={sending}>{sending ? 'Sending…' : 'Contact me'} <span>&#8599;</span></button>
+            {sendStatus === 'success' && <p className="form-note">Thanks — your message was sent.</p>}
+            {sendStatus === 'error' && <p className="form-note error">Sorry — something went wrong. Try again later.</p>}
           </form>
         </div>
         <button className="contact-image-hint" type="button" onClick={() => setContactImageExpanded((expanded) => !expanded)}>

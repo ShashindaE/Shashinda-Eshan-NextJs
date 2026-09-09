@@ -1,4 +1,4 @@
-/* Fonts loaded via <link> in layout.jsx â€” @import not supported in Turbopack client CSS */
+/* Fonts loaded via <link> in layout.jsx Ã¢â‚¬â€ @import not supported in Turbopack client CSS */
 
 :root { --ink:#171717; --paper:#eee9df; --muted:#8f8a81; --line:rgba(23,23,23,.2); --accent:#cf000f; }
 * { box-sizing:border-box; }
@@ -407,13 +407,13 @@ body { background:#111215; }
 .contact-image-trigger { position:absolute; inset:auto 24px 20px auto; width:190px; height:30px; z-index:2; }
 
 
-/* Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+/* ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â
    BLOG POST PAGE
    Layout philosophy (Jakob's Law): mirrors the standard reading
-   convention of every high-performing blog the user referenced Ã¢â‚¬â€
-   title Ã¢â€ â€™ subtitle Ã¢â€ â€™ meta Ã¢â€ â€™ cover image Ã¢â€ â€™ body copy Ã¢â€ â€™ share Ã¢â€ â€™ footer.
+   convention of every high-performing blog the user referenced ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â
+   title ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ subtitle ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ meta ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ cover image ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ body copy ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ share ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ footer.
    The reader sees TEXT first, not a blocking full-screen photo.
-Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â */
+ÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚ÂÃƒÂ¢Ã¢â‚¬Â¢Ã‚Â */
 
 /* Unlock scroll (portfolio locks html/body) */
 body:has(.blog-post-page),
@@ -435,7 +435,7 @@ html:has(.blog-page) {
   color: #111;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Sticky nav Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Sticky nav ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .blog-nav {
   position: sticky;
   top: 0;
@@ -469,7 +469,7 @@ html:has(.blog-page) {
 }
 .blog-brand:hover { color: #cf000f; }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Article wrapper Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Article wrapper ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .blog-site-header { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 clamp(20px, 5vw, 72px); height: 68px; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,.07); }
 .blog-site-brand { display: flex; align-items: center; flex-shrink: 0; }
 .blog-site-logo { height: 36px; width: auto; display: block; transition: opacity .2s; }
@@ -481,7 +481,7 @@ html:has(.blog-page) {
 .blog-site-phone { font: 10px 'DM Mono'; text-transform: uppercase; letter-spacing: .05em; color: #999; text-decoration: none; transition: color .2s; flex-shrink: 0; }
 .blog-site-phone:hover { color: #cf000f; }
 
-/* Max-width + centering Ã¢â‚¬â€ same pattern as Mark Manson (660px column) */
+/* Max-width + centering ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â same pattern as Mark Manson (660px column) */
 .blog-article {
   width: 100%;
   max-width: 860px;
@@ -490,10 +490,10 @@ html:has(.blog-page) {
   flex: 1;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Article header (ALWAYS above the fold) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Article header (ALWAYS above the fold) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 /*
   Von Restorff Effect: the large, bold title is the single most
-  distinctive element Ã¢â‚¬â€ it's what the eye locks onto instantly.
+  distinctive element ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â it's what the eye locks onto instantly.
   Peak-End Rule: the very first thing they read sets their emotional
   expectation for the whole piece.
 */
@@ -520,7 +520,7 @@ html:has(.blog-page) {
   flex-shrink: 0;
 }
 .blog-title {
-  /* Hick's Law: one dominant piece of information Ã¢â‚¬â€ the title */
+  /* Hick's Law: one dominant piece of information ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the title */
   font-size: clamp(36px, 5.5vw, 62px);
   font-weight: 700;
   letter-spacing: -.04em;
@@ -551,7 +551,7 @@ html:has(.blog-page) {
 .blog-meta-readtime { color: #cf000f; }
 .blog-meta-sep { color: #ccc; }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Cover image: inside article, AFTER the title Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Cover image: inside article, AFTER the title ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 /*
   Aesthetic-Usability Effect: the image now adds beauty to the reading
   experience rather than blocking it. It confirms the topic visually,
@@ -573,7 +573,7 @@ html:has(.blog-page) {
   border-radius: 6px;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Body copy Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Body copy ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 /*
   Postel's Law: accept rich content in many formats, output clean,
   consistent, readable prose regardless.
@@ -653,7 +653,7 @@ html:has(.blog-page) {
   font-style: italic;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ End-of-article share nudge Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ End-of-article share nudge ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 /* Peak-End Rule: the very end of the article should feel satisfying */
 .blog-end-cta {
   margin-top: 64px;
@@ -688,7 +688,7 @@ html:has(.blog-page) {
 }
 .blog-share-links a:hover { color: #cf000f; border-color: #cf000f; }
 
-/* ── Footer ── */
+/* â”€â”€ Footer â”€â”€ */
 .blog-footer {
   background: #0f0f0f;
   color: #fff;
@@ -724,7 +724,7 @@ html:has(.blog-page) {
 .blog-footer-links a:hover { color: #fff; }
 .blog-footer-copy { font: 9px 'DM Mono'; text-transform: uppercase; color: #333; margin: 0; }
 
-/* ── Blog card list (homepage) ── */
+/* â”€â”€ Blog card list (homepage) â”€â”€ */
 .blog-list { margin-top: 48px; }
 .blog-list-empty { color: var(--muted); font: 11px 'DM Mono'; text-transform: uppercase; }
 
@@ -815,7 +815,7 @@ html:has(.blog-page) {
   transform: translate(3px,-3px);
 }
 
-/* ── Responsive ── */
+/* â”€â”€ Responsive â”€â”€ */
 @media (max-width: 740px) {
   /* Blog site header on mobile: logo only, hide nav + phone */
   .blog-site-header { padding: 0 16px; height: 56px; }
@@ -943,7 +943,7 @@ html:has(.blog-page) {
   color: var(--accent);
 }
 
-/* ── Hero ── */
+/* â”€â”€ Hero â”€â”€ */
 .blog-hero {
   padding: clamp(60px, 7vw, 100px) clamp(20px, 5vw, 72px) 20px;
   max-width: 1240px;
@@ -986,7 +986,7 @@ html:has(.blog-page) {
   margin: 0;
 }
 
-/* ── Filter Controls & Search Bar ── */
+/* â”€â”€ Filter Controls & Search Bar â”€â”€ */
 .blog-controls {
   margin-top: 48px;
   display: flex;
@@ -1057,7 +1057,7 @@ html:has(.blog-page) {
   pointer-events: none;
 }
 
-/* ── Spotlight Featured Post ── */
+/* â”€â”€ Spotlight Featured Post â”€â”€ */
 .blog-spotlight {
   max-width: 1240px;
   width: 100%;
@@ -1152,7 +1152,7 @@ html:has(.blog-page) {
   transform: translate(3px, -3px);
 }
 
-/* ── Grid Section ── */
+/* â”€â”€ Grid Section â”€â”€ */
 .blog-grid-section {
   max-width: 1240px;
   width: 100%;
@@ -1314,7 +1314,7 @@ html:has(.blog-page) {
   transform: translate(2px, -2px);
 }
 
-/* ── Empty State ── */
+/* â”€â”€ Empty State â”€â”€ */
 .blog-empty-state {
   text-align: center;
   padding: 60px 20px;
@@ -1335,7 +1335,7 @@ html:has(.blog-page) {
   margin: 0 auto 24px;
 }
 
-/* ── Bottom Call To Action ── */
+/* â”€â”€ Bottom Call To Action â”€â”€ */
 .blog-cta-section {
   max-width: 1240px;
   width: 100%;
@@ -1672,7 +1672,7 @@ html:has(.blog-page) {
   color: #fff;
 }
 
-/* ── Services Preview Panel (Desktop) ── */
+/* â”€â”€ Services Preview Panel (Desktop) â”€â”€ */
 .services-preview-panel {
   position: -webkit-sticky;
   position: sticky;
@@ -2117,7 +2117,7 @@ html:has(.blog-page) {
   box-shadow: 0 0 6px #4ade80;
 }
 
-/* ── Section Footer / CTA ── */
+/* â”€â”€ Section Footer / CTA â”€â”€ */
 .services-footer {
   margin-top: 50px;
   padding-top: 32px;
@@ -2142,7 +2142,7 @@ html:has(.blog-page) {
   margin: 0;
 }
 
-/* ── Responsive adjustments for Services ── */
+/* â”€â”€ Responsive adjustments for Services â”€â”€ */
 @media (max-width: 1100px) {
   .services-layout {
     grid-template-columns: 1fr;
@@ -2195,3 +2195,112 @@ html:has(.blog-page) {
     margin-top: 32px;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SHOP — Standalone e-commerce page styles
+   All classes are prefixed with .shop- to avoid collision with existing styles.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Layout ── */
+.shop-page { min-height: 100vh; background: #0a0a0f; color: #e8e8f0; font-family: 'Inter', sans-serif; }
+.shop-container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+/* ── Header ── */
+.shop-header { background: rgba(15,15,25,0.95); border-bottom: 1px solid rgba(255,255,255,0.07); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 50; }
+.shop-header-inner { max-width: 1200px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.shop-title { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg, #a78bfa, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 0; }
+.shop-subtitle { color: rgba(255,255,255,0.45); font-size: 0.9rem; margin: 0.2rem 0 0; }
+.shop-back-link { color: rgba(255,255,255,0.55); font-size: 0.9rem; text-decoration: none; transition: color 0.2s; }
+.shop-back-link:hover { color: #a78bfa; }
+
+/* ── Cart button ── */
+.shop-cart-btn { background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.3); color: #a78bfa; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: all 0.2s; cursor: pointer; }
+.shop-cart-btn:hover { background: rgba(167,139,250,0.22); }
+.shop-cart-badge { background: #a78bfa; color: #0a0a0f; border-radius: 999px; font-size: 0.7rem; font-weight: 800; padding: 0 0.45rem; min-width: 1.2rem; text-align: center; line-height: 1.4rem; }
+
+/* ── Toast ── */
+.shop-toast { position: fixed; bottom: 2rem; right: 2rem; background: linear-gradient(135deg, #a78bfa, #818cf8); color: #fff; padding: 0.75rem 1.25rem; border-radius: 12px; font-size: 0.9rem; font-weight: 500; z-index: 999; box-shadow: 0 8px 32px rgba(167,139,250,0.35); animation: shopToastIn 0.3s ease; }
+@keyframes shopToastIn { from { opacity: 0; transform: translateY(1rem); } to { opacity: 1; transform: translateY(0); } }
+
+/* ── Grid ── */
+.shop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+
+/* ── Card ── */
+.shop-card { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+.shop-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.3); }
+.shop-card-image-link { display: block; }
+.shop-card-image { width: 100%; height: 220px; object-fit: cover; display: block; }
+.shop-card-placeholder { width: 100%; height: 220px; display: flex; align-items: center; justify-content: center; font-size: 3rem; background: rgba(255,255,255,0.03); }
+.shop-card-body { padding: 1.25rem; }
+.shop-card-title { display: block; color: #e8e8f0; font-weight: 600; font-size: 1rem; text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s; }
+.shop-card-title:hover { color: #a78bfa; }
+.shop-card-price { color: #a78bfa; font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+.shop-card-btn { width: 100%; background: linear-gradient(135deg, #a78bfa, #818cf8); color: #fff; border: none; padding: 0.65rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s, transform 0.15s; text-decoration: none; text-align: center; display: block; }
+.shop-card-btn:hover { opacity: 0.88; transform: scale(0.99); }
+
+/* ── Empty state ── */
+.shop-empty { text-align: center; padding: 5rem 1rem; }
+.shop-empty-icon { font-size: 4rem; margin-bottom: 1rem; }
+.shop-empty h2 { font-size: 1.6rem; font-weight: 700; color: #e8e8f0; margin: 0 0 0.5rem; }
+.shop-empty p { color: rgba(255,255,255,0.4); margin: 0; }
+
+/* ── Product detail ── */
+.shop-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+@media (max-width: 768px) { .shop-detail-grid { grid-template-columns: 1fr; } }
+.shop-gallery-main { border-radius: 16px; overflow: hidden; background: rgba(255,255,255,0.03); aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.shop-gallery-main-img { width: 100%; height: 100%; object-fit: cover; }
+.shop-gallery-placeholder { font-size: 4rem; }
+.shop-gallery-thumbs { display: flex; gap: 0.5rem; margin-top: 0.75rem; flex-wrap: wrap; }
+.shop-gallery-thumb { width: 64px; height: 64px; border-radius: 8px; overflow: hidden; border: 2px solid transparent; cursor: pointer; padding: 0; background: none; transition: border-color 0.2s; }
+.shop-gallery-thumb.active { border-color: #a78bfa; }
+.shop-gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.shop-detail-title { font-size: 2rem; font-weight: 800; color: #e8e8f0; margin: 0 0 0.75rem; }
+.shop-detail-price { font-size: 1.6rem; font-weight: 700; color: #a78bfa; margin-bottom: 1.5rem; }
+.shop-variants { margin-bottom: 1.25rem; }
+.shop-variants-label { font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.shop-variants-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.shop-variant-btn { padding: 0.4rem 0.9rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: transparent; color: #e8e8f0; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+.shop-variant-btn.active, .shop-variant-btn:hover { border-color: #a78bfa; background: rgba(167,139,250,0.12); color: #a78bfa; }
+.shop-quantity { margin-bottom: 1.5rem; }
+.shop-quantity-controls { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
+.shop-qty-btn { width: 36px; height: 36px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #e8e8f0; font-size: 1.1rem; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+.shop-qty-btn:hover { border-color: #a78bfa; background: rgba(167,139,250,0.12); }
+.shop-qty-val { font-size: 1.1rem; font-weight: 600; min-width: 2rem; text-align: center; }
+.shop-add-to-cart-btn { width: 100%; padding: 0.9rem; border-radius: 12px; border: none; background: linear-gradient(135deg, #a78bfa, #818cf8); color: #fff; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.2s; margin-bottom: 0.75rem; }
+.shop-add-to-cart-btn.added { background: linear-gradient(135deg, #34d399, #10b981); }
+.shop-add-to-cart-btn:hover { opacity: 0.88; }
+.shop-checkout-link { display: block; text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9rem; text-decoration: none; margin-bottom: 2rem; transition: color 0.2s; }
+.shop-checkout-link:hover { color: #a78bfa; }
+.shop-detail-desc { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.25rem; color: rgba(255,255,255,0.55); line-height: 1.7; font-size: 0.95rem; }
+
+/* ── Cart page ── */
+.shop-cart-layout { display: grid; grid-template-columns: 1fr 380px; gap: 2rem; }
+@media (max-width: 900px) { .shop-cart-layout { grid-template-columns: 1fr; } }
+.shop-cart-items { display: flex; flex-direction: column; gap: 1rem; }
+.shop-cart-item { display: grid; grid-template-columns: 80px 1fr auto; gap: 1rem; align-items: start; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 1rem; }
+.shop-cart-item-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
+.shop-cart-item-title { font-weight: 600; font-size: 0.95rem; color: #e8e8f0; margin-bottom: 0.25rem; }
+.shop-cart-item-price { color: rgba(255,255,255,0.4); font-size: 0.85rem; }
+.shop-cart-item-subtotal { font-weight: 700; color: #a78bfa; white-space: nowrap; }
+.shop-remove-btn { background: none; border: none; color: rgba(255,255,255,0.3); font-size: 0.8rem; cursor: pointer; padding: 0 0.5rem; transition: color 0.2s; }
+.shop-remove-btn:hover { color: #f87171; }
+
+/* ── Cart summary ── */
+.shop-cart-summary { background: rgba(255,255,255,0.035); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; height: fit-content; position: sticky; top: 80px; }
+.shop-cart-summary-title { font-size: 1.1rem; font-weight: 700; color: #e8e8f0; margin-bottom: 1rem; }
+.shop-summary-line { display: flex; justify-content: space-between; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; gap: 0.5rem; }
+.shop-summary-total { display: flex; justify-content: space-between; font-size: 1rem; font-weight: 700; color: #e8e8f0; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 0.75rem; margin: 0.75rem 0 1.25rem; }
+.shop-email-input { width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; padding: 0.65rem 0.9rem; color: #e8e8f0; font-size: 0.9rem; margin-bottom: 0.75rem; outline: none; transition: border-color 0.2s; box-sizing: border-box; }
+.shop-email-input:focus { border-color: #a78bfa; }
+.shop-pay-btn { width: 100%; background: linear-gradient(135deg, #a78bfa, #818cf8); color: #fff; border: none; padding: 0.85rem; border-radius: 10px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: opacity 0.2s; margin-top: 1rem; }
+.shop-pay-btn:hover:not(:disabled) { opacity: 0.88; }
+.shop-pay-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.shop-payment-form { margin-top: 1rem; }
+.shop-payment-error { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.3); color: #f87171; border-radius: 8px; padding: 0.65rem 0.9rem; font-size: 0.85rem; margin-top: 0.75rem; }
+
+/* ── Success / result page ── */
+.shop-result-page { text-align: center; padding: 6rem 1rem; }
+.shop-result-icon { font-size: 5rem; margin-bottom: 1.5rem; }
+.shop-result-title { font-size: 2.2rem; font-weight: 800; color: #e8e8f0; margin: 0 0 0.75rem; }
+.shop-result-subtitle { color: rgba(255,255,255,0.45); font-size: 1rem; margin-bottom: 2rem; }

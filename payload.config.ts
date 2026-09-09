@@ -2,6 +2,8 @@ import { buildConfig } from 'payload'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { cloudinaryStorage } from 'payload-cloudinary'
+import { ecommercePlugin } from '@payloadcms/plugin-ecommerce'
+import { stripeAdapter } from '@payloadcms/plugin-ecommerce/payments/stripe'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
@@ -42,6 +44,8 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL,
     },
+    // Auto-push schema changes without interactive prompts (safe for dev + Supabase)
+    push: true,
   }),
 
   plugins: [
@@ -53,6 +57,60 @@ export default buildConfig({
       },
       collections: {
         media: true,
+      },
+    }),
+
+    ecommercePlugin({
+      // Access control — simple open rules; products are public, admin manages everything
+      access: {
+        adminOnlyFieldAccess: () => false,
+        adminOrPublishedStatus: () => true,
+        isAdmin: ({ req }) => Boolean(req.user),
+        isAuthenticated: ({ req }) => Boolean(req.user),
+        isDocumentOwner: ({ req }) => {
+          if (!req.user) return false
+          return { customer: { equals: req.user.id } }
+        },
+      },
+
+      // Map customers to the existing Users collection
+      customers: {
+        slug: 'users',
+      },
+
+      // LKR — Sri Lankan Rupee (0 decimal places in Stripe, 2 displayed)
+      currencies: {
+        defaultCurrency: 'LKR',
+        supportedCurrencies: [
+          {
+            code: 'LKR',
+            decimals: 2,
+            label: 'Sri Lankan Rupee',
+            symbol: 'Rs.',
+          },
+        ],
+      },
+
+      // Enable products with variant support (size, color etc.)
+      products: {
+        variants: true,
+      },
+
+      // Enable orders, carts, addresses, transactions
+      orders: true,
+      carts: true,
+      addresses: true,
+      transactions: true,
+
+      // Wire up Stripe
+      payments: {
+        paymentMethods: [
+          stripeAdapter({
+            secretKey: process.env.STRIPE_SECRET_KEY || '',
+            publishableKey: process.env.STRIPE_PUBLISHABLE_KEY || '',
+            webhookSecret: process.env.STRIPE_WEBHOOK_SECRET || '',
+          }),
+        ],
       },
     }),
   ],

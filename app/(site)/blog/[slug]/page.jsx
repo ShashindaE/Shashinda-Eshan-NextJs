@@ -62,7 +62,7 @@ export default async function BlogPost({ params }) {
           <a href="/#about">About</a>
           <a href="/#projects">Projects</a>
           <a href="/#work">Work</a>
-          <a href="/#blog" className="active">Blog</a>
+          <a href="/blog" className="active">Blog</a>
           <a href="/#contact">Contact</a>
         </nav>
         <a className="blog-site-phone" href="tel:+94769415015">+94 76 941 5015</a>
@@ -157,7 +157,7 @@ export default async function BlogPost({ params }) {
             </div>
             <nav className="blog-footer-links" aria-label="Footer navigation">
               <a href="/">Home</a>
-              <a href="/#blog">Blog</a>
+              <a href="/blog">Blog</a>
               <a href="/#contact">Contact</a>
               <a href="https://www.instagram.com/shashindaeshan" target="_blank" rel="noopener noreferrer">Instagram</a>
               <a href="https://www.linkedin.com/in/shashinda-eshan" target="_blank" rel="noopener noreferrer">LinkedIn</a>

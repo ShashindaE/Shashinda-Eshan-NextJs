@@ -14,7 +14,7 @@ async function getBlogPosts() {
     })
     // Prefer an explicitly featured post; fall back to the most recent one.
     const featuredPost = docs.find((doc) => doc.featured) || docs[0] || null
-    const posts = docs.filter((doc) => doc.id !== featuredPost?.id).slice(0, 5)
+    const posts = docs.filter((doc) => doc.id !== featuredPost?.id).slice(0, featuredPost ? 4 : 5)
     return { posts, featuredPost }
   } catch {
     return { posts: [], featuredPost: null }

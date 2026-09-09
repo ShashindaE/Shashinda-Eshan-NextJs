@@ -28,7 +28,7 @@ export default function ScrollExperience({ sections, children }) {
       event.preventDefault();
       if (Math.abs(event.deltaY) < 8 || isTransitioning) return;
       const currentPage = getCurrentPage();
-      const canScrollInside = currentPage?.dataset.scrollable !== 'false';
+      const canScrollInside = currentPage?.dataset.scrollable !== 'false' || window.matchMedia('(max-width: 800px)').matches;
       const maxScroll = currentPage ? currentPage.scrollHeight - currentPage.clientHeight : 0;
       const atBottom = !currentPage || currentPage.scrollTop >= maxScroll - 2;
       const atTop = !currentPage || currentPage.scrollTop <= 2;
@@ -72,7 +72,7 @@ export default function ScrollExperience({ sections, children }) {
       const distance = touchStart.current - event.changedTouches[0].clientY;
       if (Math.abs(distance) > 45) {
         const currentPage = getCurrentPage();
-        const canScrollInside = currentPage?.dataset.scrollable !== 'false';
+        const canScrollInside = currentPage?.dataset.scrollable !== 'false' || window.matchMedia('(max-width: 800px)').matches;
         const maxScroll = currentPage ? currentPage.scrollHeight - currentPage.clientHeight : 0;
         const atBottom = !currentPage || currentPage.scrollTop >= maxScroll - 2;
         const atTop = !currentPage || currentPage.scrollTop <= 2;

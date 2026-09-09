@@ -28,3 +28,19 @@ This document summarizes the recent changes and enhancements made to the blog se
 ## 5. CSS & Build Optimization
 - **Font Loading:** Fixed a Turbopack `@import` build error by removing `@import` from `globals.css` and properly loading Google Fonts (`DM Mono` and `Manrope`) via `<link>` tags in `layout.jsx`.
 - **Responsive Overhaul:** Added comprehensive media queries across `globals.css` to ensure blog padding, fonts, and the footer layout adapt gracefully to mobile devices.
+
+## 6. Advanced Blog Infrastructure & Taxonomy
+- **Categories & Tags:** Added `Categories` and `Tags` collections in Payload. Linked them to the `Posts` collection to allow comprehensive content organization.
+- **Featured Posts:** Added a `featured` boolean flag to the `Posts` collection to highlight specific posts.
+- **Database Schema Sync:** Manually synchronized the Supabase PostgreSQL database tables (`categories`, `tags`, `posts_rels`, and `posts.featured`) to bypass automatic push errors. Fixed relational mapping in `payload_locked_documents_rels` to ensure a stable admin panel.
+
+## 7. Infrastructure Stability & Slugs
+- **Connection Limits:** Transitioned the Supabase connection to transaction pooling mode (port `6543`) in `.env.local` to resolve serverless `EMAXCONNSESSION` limits on Vercel.
+- **Slug Normalization:** Wrote and executed scripts to clean up URL-friendly slugs for existing posts, resolving persistent 404 errors and ensuring Vercel ISR cache validity.
+
+## Future To-Do: E-Commerce Integration
+To introduce e-commerce capabilities while remaining 100% on the Vercel + Supabase stack, we will use the official Payload E-Commerce template as a structural blueprint:
+- **Collections Porting:** Manually port the `Products`, `Orders`, `Carts`, `Transactions`, and `Addresses` collections from the template into our existing repository.
+- **Database Adapter:** Adapt the schemas to use the existing `@payloadcms/db-postgres` (Supabase) instead of the template's default MongoDB adapter.
+- **Payments:** Integrate `@payloadcms/plugin-stripe` for processing payments.
+- **Frontend Integration:** Build the storefront pages natively within the existing Next.js application, keeping the entire platform within a single Vercel project and a single Supabase database.

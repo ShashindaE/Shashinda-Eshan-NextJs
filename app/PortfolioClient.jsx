@@ -131,6 +131,11 @@ function BlogList({ posts }) {
           </article>
         );
       })}
+      <div className="blog-list-more">
+        <a className="blog-more-link" href="/blog">
+          View all stories &amp; notes <span>&#8599;</span>
+        </a>
+      </div>
     </div>
   );
 }
@@ -249,7 +254,10 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
 
       <section className={`${pageClass(5)} blog`} id="blog">
         <div className="section-label"><span>05</span> Recent thinking</div>
-        <h2>Notes from<br /><em>the studio.</em></h2>
+        <div className="blog-heading">
+          <h2>Notes from<br /><em>the studio.</em></h2>
+          <ArrowLink href="/blog">View all stories</ArrowLink>
+        </div>
         <div className="blog-content">
           <BlogList posts={blogPosts} />
           <FeaturedPost post={featuredPost} />

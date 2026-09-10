@@ -9,7 +9,8 @@
         "start": "next start",
         "generate:types": "payload generate:types",
         "generate:importmap": "payload generate:importmap",
-        "lint": "next lint"
+        "lint": "next lint",
+        "seed:products": "tsx --env-file=.env.local scripts/seed-products.ts"
     },
     "dependencies": {
         "@payloadcms/db-postgres": "^3.88.0",

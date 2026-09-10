@@ -451,6 +451,18 @@ export interface Variant {
  */
 export interface Product {
   id: number;
+  title: string;
+  /**
+   * Auto-generated from title if left blank.
+   */
+  slug?: string | null;
+  description?: string | null;
+  gallery?:
+    | {
+        image: number | Media;
+        id?: string | null;
+      }[]
+    | null;
   inventory?: number | null;
   enableVariants?: boolean | null;
   variantTypes?: (number | VariantType)[] | null;
@@ -885,6 +897,15 @@ export interface VariantOptionsSelect<T extends boolean = true> {
  * via the `definition` "products_select".
  */
 export interface ProductsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  gallery?:
+    | T
+    | {
+        image?: T;
+        id?: T;
+      };
   inventory?: T;
   enableVariants?: T;
   variantTypes?: T;

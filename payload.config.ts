@@ -91,9 +91,66 @@ export default buildConfig({
         ],
       },
 
-      // Enable products with variant support (size, color etc.)
+      // Enable products with variant support + custom display fields
       products: {
         variants: true,
+        productsCollectionOverride: ({ defaultCollection }) => ({
+          ...defaultCollection,
+          admin: {
+            ...defaultCollection.admin,
+            useAsTitle: 'title',
+            defaultColumns: ['title', 'priceInLKR', '_status'],
+          },
+          fields: [
+            // Display fields added before the plugin's price/inventory fields
+            {
+              name: 'title',
+              type: 'text',
+              required: true,
+              label: 'Product Name',
+            },
+            {
+              name: 'slug',
+              type: 'text',
+              unique: true,
+              label: 'URL Slug',
+              admin: { position: 'sidebar', description: 'Auto-generated from title if left blank.' },
+              hooks: {
+                beforeValidate: [
+                  ({ value, data }: { value: string; data: Record<string, unknown> }) => {
+                    if (!value && data?.title) {
+                      return String(data.title)
+                        .toLowerCase()
+                        .replace(/\s+/g, '-')
+                        .replace(/[^a-z0-9-]/g, '')
+                    }
+                    return value
+                  },
+                ],
+              },
+            },
+            {
+              name: 'description',
+              type: 'textarea',
+              label: 'Description',
+            },
+            {
+              name: 'gallery',
+              type: 'array',
+              label: 'Product Images',
+              fields: [
+                {
+                  name: 'image',
+                  type: 'upload',
+                  relationTo: 'media' as const,
+                  required: true,
+                },
+              ],
+            },
+            // Spread plugin's default fields (prices, inventory, variants)
+            ...defaultCollection.fields,
+          ],
+        }),
       },
 
       // Enable orders, carts, addresses, transactions

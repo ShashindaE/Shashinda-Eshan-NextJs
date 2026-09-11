@@ -117,7 +117,7 @@ export default buildConfig({
               admin: { position: 'sidebar', description: 'Auto-generated from title if left blank.' },
               hooks: {
                 beforeValidate: [
-                  ({ value, data }: { value: string; data: Record<string, unknown> }) => {
+                  ({ value, data }: { value?: string; data?: Record<string, unknown> }) => {
                     if (!value && data?.title) {
                       return String(data.title)
                         .toLowerCase()

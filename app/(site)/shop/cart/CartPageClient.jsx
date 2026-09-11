@@ -85,21 +85,38 @@ export default function CartPageClient() {
     setError(null)
 
     try {
-      const res = await fetch('/api/payments/stripe/initiate', {
+      // Step 1: Create a Payload cart document so we have a real cartID
+      const cartRes = await fetch('/api/carts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           currency: 'LKR',
+          items: cart.map(i => ({
+            product: i.productId,
+            ...(i.variantId ? { variant: i.variantId } : {}),
+            quantity: i.quantity,
+          })),
+        }),
+      })
+      const cartData = await cartRes.json()
+      if (!cartRes.ok) {
+        throw new Error(
+          cartData?.errors?.[0]?.message || cartData?.message || 'Failed to create cart'
+        )
+      }
+
+      const cartID = cartData?.doc?.id
+      const cartSecret = cartData?.doc?.secret // only present if guest cart
+      if (!cartID) throw new Error('Cart creation did not return an ID')
+
+      // Step 2: Initiate payment with the real cartID
+      const res = await fetch('/api/payments/stripe/initiate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cartID,
+          ...(cartSecret ? { secret: cartSecret } : {}),
           customerEmail: email,
-          cart: {
-            items: cart.map(i => ({
-              product: i.productId,
-              variant: i.variantId || undefined,
-              quantity: i.quantity,
-            })),
-            subtotal: Math.round(subtotal * 100), // in cents/paisa
-            currency: 'LKR',
-          },
           billingAddress: {
             line1: 'N/A',
             city: 'N/A',

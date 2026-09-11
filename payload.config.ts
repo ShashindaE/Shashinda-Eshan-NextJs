@@ -155,7 +155,7 @@ export default buildConfig({
 
       // Enable orders, carts, addresses, transactions
       orders: true,
-      carts: true,
+      carts: { allowGuestCarts: true },
       addresses: true,
       transactions: true,
 

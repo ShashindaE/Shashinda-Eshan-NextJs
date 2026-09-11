@@ -5,13 +5,16 @@
 import { getPayload } from 'payload'
 import configPromise from '../payload.config'
 
+// Prices are stored in PAISA (smallest unit, like cents) because Stripe
+// treats LKR as a 2-decimal currency. Divide by 100 for display.
+// e.g. Rs. 4,500 → priceInLKR: 450000
 const sampleProducts = [
   {
     title: 'Brand Strategy Guide',
     slug: 'brand-strategy-guide',
     description:
       'A comprehensive step-by-step PDF guide on building a powerful personal or business brand from scratch. Covers positioning, messaging, visual identity, and launch strategy.',
-    priceInLKR: 4500,
+    priceInLKR: 450000,   // Rs. 4,500
     inventory: 999,
     _status: 'published' as const,
   },
@@ -20,7 +23,7 @@ const sampleProducts = [
     slug: 'logo-design-consultation-1hr',
     description:
       'Book a one-on-one 60-minute strategy session to discuss your logo, brand direction, or design challenges. Delivered via Google Meet with a follow-up summary.',
-    priceInLKR: 8500,
+    priceInLKR: 850000,   // Rs. 8,500
     inventory: 10,
     _status: 'published' as const,
   },
@@ -29,7 +32,7 @@ const sampleProducts = [
     slug: 'social-media-visual-kit',
     description:
       'A ready-to-use Canva template pack — 30 professionally designed posts, stories, and highlight covers tailored for creative professionals and personal brands.',
-    priceInLKR: 2990,
+    priceInLKR: 299000,   // Rs. 2,990
     inventory: 999,
     _status: 'published' as const,
   },
@@ -38,7 +41,7 @@ const sampleProducts = [
     slug: 'full-brand-identity-package',
     description:
       'Everything you need for a cohesive brand: logo suite, colour palette, typography guide, brand guidelines PDF, and 5 social media templates. Delivered within 7 days.',
-    priceInLKR: 35000,
+    priceInLKR: 3500000,  // Rs. 35,000
     inventory: 5,
     _status: 'published' as const,
   },
@@ -47,7 +50,7 @@ const sampleProducts = [
     slug: 'website-audit-report',
     description:
       'A detailed professional audit of your existing website covering UX, SEO fundamentals, visual design, load speed, and conversion opportunities — with actionable recommendations.',
-    priceInLKR: 6500,
+    priceInLKR: 650000,   // Rs. 6,500
     inventory: 20,
     _status: 'published' as const,
   },
@@ -60,23 +63,29 @@ async function seed() {
 
   for (const product of sampleProducts) {
     try {
-      // Check if already exists
       const existing = await payload.find({
         collection: 'products',
         where: { slug: { equals: product.slug } },
         limit: 1,
       })
 
-      if (existing.docs.length > 0) {
-        console.log(`  ⏭  Skipped (already exists): ${product.title}`)
-        continue
-      }
+      const displayPrice = `Rs. ${(product.priceInLKR / 100).toLocaleString('en-LK', { minimumFractionDigits: 2 })}`
 
-      await payload.create({
-        collection: 'products',
-        data: product,
-      })
-      console.log(`  ✓  Created: ${product.title} — Rs. ${product.priceInLKR.toLocaleString('en-LK')}`)
+      if (existing.docs.length > 0) {
+        // Update existing product so prices are corrected to paisa
+        await payload.update({
+          collection: 'products',
+          id: existing.docs[0].id,
+          data: product,
+        })
+        console.log(`  ↺  Updated: ${product.title} — ${displayPrice}`)
+      } else {
+        await payload.create({
+          collection: 'products',
+          data: product,
+        })
+        console.log(`  ✓  Created: ${product.title} — ${displayPrice}`)
+      }
     } catch (err) {
       console.error(`  ✗  Failed: ${product.title}`, err)
     }

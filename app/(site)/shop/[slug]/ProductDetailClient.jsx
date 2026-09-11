@@ -12,7 +12,7 @@ export default function ProductDetailClient({ product }) {
 
   const variants = product.variants?.docs || product.variants || []
   const gallery = product.gallery || []
-  const price = selectedVariant?.priceInLKR ?? product.priceInLKR ?? 0
+  const price = (selectedVariant?.priceInLKR ?? product.priceInLKR ?? 0) / 100
 
   useEffect(() => {
     try {
@@ -27,7 +27,7 @@ export default function ProductDetailClient({ product }) {
       variantId: selectedVariant?.id || null,
       slug: product.slug,
       title: product.title + (selectedVariant ? ` — ${selectedVariant.title || ''}` : ''),
-      price: Number(product.priceInLKR ?? 0),
+      price: Number((product.priceInLKR ?? 0) / 100),
       quantity,
       image: gallery?.[0]?.image?.url || null,
     }

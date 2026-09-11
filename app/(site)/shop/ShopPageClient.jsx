@@ -15,7 +15,7 @@ export default function ShopPageClient({ products }) {
   }, [])
 
   function addToCart(product) {
-    const price = product.prices?.[0]?.price ?? product.priceInUSD ?? 0
+    const price = (product.priceInLKR ?? 0) / 100
     const item = {
       productId: product.id,
       slug: product.slug,
@@ -69,7 +69,7 @@ export default function ShopPageClient({ products }) {
         ) : (
           <div className="shop-grid">
             {products.map(product => {
-              const price = product.priceInLKR ?? 0
+              const price = (product.priceInLKR ?? 0) / 100
               const image = product.gallery?.[0]?.image?.url || null
               return (
                 <div key={product.id} className="shop-card">

@@ -360,7 +360,7 @@ function Header({ activeSection, mobileMenuOpen, onToggleMenu }) {
   return (
     <header className={`site-header ${activeSection > 0 ? 'is-solid' : ''}`}>
       <a className="brand" href="#home">
-        <img src="https://shashinda.com/wp-content/uploads/2024/12/Untitled-December-22-2024-at-21.28.33-2.png" alt="Shashinda Eshan" />
+        <img src="/logo-dark.png" alt="Shashinda Eshan" />
       </a>
       <nav aria-label="Main navigation">
         {sections.map((section, index) => (
@@ -519,7 +519,7 @@ function PageContent({ activeSection, incomingSection, isTransitioning, blogPost
         </div>
         <div className="hero-image-wrap">
           <div className="hero-image">
-            <img src="https://shashinda.com/wp-content/uploads/2020/12/home.jpg" alt="Shashinda Eshan" />
+            <img src="/hero.jpg" alt="Shashinda Eshan" />
           </div>
           <div className="hero-stamp">SCROLL<br /><span>&#8595;</span></div>
         </div>

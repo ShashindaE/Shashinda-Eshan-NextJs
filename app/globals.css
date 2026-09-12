@@ -1483,11 +1483,27 @@ html:has(.blog-page) {
   .contact.slide-page {
     padding: 112px 7vw 50px !important;
     overflow-y: auto;
-    background: #111215 !important;
+    background: #141516 !important;
   }
-  .contact.slide-page::before,
+  .contact.slide-page::before {
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: -2 !important;
+    background: url('/contact.jpg') center / cover no-repeat !important;
+    filter: saturate(1.05) contrast(1.04) !important;
+    pointer-events: none !important;
+    transform: none !important;
+  }
   .contact.slide-page::after {
-    display: none !important;
+    content: '' !important;
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    background: rgba(10, 11, 12, 0.64) !important;
+    pointer-events: none !important;
   }
   .contact-image-hint {
     display: none !important;

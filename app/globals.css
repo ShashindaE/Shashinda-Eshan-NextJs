@@ -1480,8 +1480,18 @@ html:has(.blog-page) {
 .form-row label { margin-top:13px; }
 
 @media (max-width:800px) {
-  .contact.slide-page { padding:112px 7vw 50px !important; }
-  .contact.slide-page { overflow-y:auto; }
+  .contact.slide-page {
+    padding: 112px 7vw 50px !important;
+    overflow-y: auto;
+    background: #111215 !important;
+  }
+  .contact.slide-page::before,
+  .contact.slide-page::after {
+    display: none !important;
+  }
+  .contact-image-hint {
+    display: none !important;
+  }
   .contact.slide-page .contact-top { width:auto; max-width:100%; }
   .contact.slide-page .contact-bottom { display:block; }
   .contact.slide-page .contact-bottom div:nth-child(2) { margin-top:18px; }

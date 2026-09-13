@@ -176,12 +176,16 @@ export default buildConfig({
       collections: ['posts'],
       uploadsCollection: 'media',
       tabbedUI: false,
-      generateTitle: ({ doc }) =>
-        `${(doc as any)?.title?.value ?? ''} — Shashinda Eshan`,
+      generateTitle: ({ doc }) => {
+        const title = (doc as any)?.title || ''
+        return title ? `${title} — Shashinda Eshan` : 'Shashinda Eshan'
+      },
       generateDescription: ({ doc }) =>
-        (doc as any)?.excerpt?.value ?? '',
-      generateImage: ({ doc }) =>
-        (doc as any)?.coverImage?.value,
+        (doc as any)?.excerpt || '',
+      generateImage: ({ doc }) => {
+        const cover = (doc as any)?.coverImage
+        return typeof cover === 'object' ? cover?.id : cover
+      },
     }),
   ],
 

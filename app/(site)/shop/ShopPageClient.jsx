@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { SiteShell } from '../../components/SiteShell'
 
 export default function ShopPageClient({ products }) {
   const [cart, setCart] = useState([])
@@ -15,14 +16,14 @@ export default function ShopPageClient({ products }) {
   }, [])
 
   function addToCart(product) {
-    const price = (product.priceInLKR ?? 0) / 100
+    const price = parseFloat(product.price || 0)
     const item = {
       productId: product.id,
       slug: product.slug,
-      title: product.title,
+      title: product.name,
       price,
       quantity: 1,
-      image: product.gallery?.[0]?.image?.url || null,
+      image: product.images?.[0]?.src || null,
     }
     const existing = cart.find(c => c.productId === product.id)
     const next = existing
@@ -30,76 +31,80 @@ export default function ShopPageClient({ products }) {
       : [...cart, item]
     setCart(next)
     localStorage.setItem('shashinda_cart', JSON.stringify(next))
-    setNotification(product.title)
+    setNotification(product.name)
     setTimeout(() => setNotification(null), 2500)
   }
 
   const cartCount = cart.reduce((s, c) => s + c.quantity, 0)
 
   return (
-    <div className="shop-page">
-      {/* Header */}
-      <div className="shop-header">
-        <div className="shop-header-inner">
-          <div>
-            <h1 className="shop-title">Shop</h1>
-            <p className="shop-subtitle">Curated products by Shashinda Eshan</p>
+    <SiteShell>
+      <div className="shop-page">
+        {/* Header Area */}
+        <div className="shop-hero">
+          <div className="shop-hero-inner">
+            <div>
+              <p className="eyebrow">Store <i /> Curated Products</p>
+              <h1>The <em>Shop</em></h1>
+            </div>
+            <Link href="/shop/cart" className="shop-cart-btn-premium">
+              <span className="cart-icon">🛒</span> 
+              <span className="cart-text">Cart</span>
+              {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
+            </Link>
           </div>
-          <Link href="/shop/cart" className="shop-cart-btn">
-            🛒 Cart {cartCount > 0 && <span className="shop-cart-badge">{cartCount}</span>}
-          </Link>
         </div>
-      </div>
 
-      {/* Notification toast */}
-      {notification && (
-        <div className="shop-toast">
-          ✓ Added <strong>{notification}</strong> to cart
-        </div>
-      )}
-
-      {/* Product Grid */}
-      <div className="shop-container">
-        {products.length === 0 ? (
-          <div className="shop-empty">
-            <div className="shop-empty-icon">🛍️</div>
-            <h2>Coming Soon</h2>
-            <p>Products will be available here shortly.</p>
-          </div>
-        ) : (
-          <div className="shop-grid">
-            {products.map(product => {
-              const price = (product.priceInLKR ?? 0) / 100
-              const image = product.gallery?.[0]?.image?.url || null
-              return (
-                <div key={product.id} className="shop-card">
-                  <Link href={`/shop/${product.slug}`} className="shop-card-image-link">
-                    {image ? (
-                      <img src={image} alt={product.title} className="shop-card-image" />
-                    ) : (
-                      <div className="shop-card-placeholder">🖼️</div>
-                    )}
-                  </Link>
-                  <div className="shop-card-body">
-                    <Link href={`/shop/${product.slug}`} className="shop-card-title">
-                      {product.title}
-                    </Link>
-                    <div className="shop-card-price">
-                      Rs. {Number(price).toLocaleString('en-LK', { minimumFractionDigits: 2 })}
-                    </div>
-                    <button
-                      className="shop-card-btn"
-                      onClick={() => addToCart(product)}
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
-                </div>
-              )
-            })}
+        {/* Notification toast */}
+        {notification && (
+          <div className="shop-toast">
+            ✓ Added <strong>{notification}</strong> to cart
           </div>
         )}
+
+        {/* Product Grid */}
+        <div className="shop-container">
+          {products.length === 0 ? (
+            <div className="shop-empty">
+              <div className="shop-empty-icon">🛍️</div>
+              <h2>Coming Soon</h2>
+              <p>Products will be available here shortly.</p>
+            </div>
+          ) : (
+            <div className="shop-grid">
+              {products.map(product => {
+                const price = parseFloat(product.price || 0)
+                const image = product.images?.[0]?.src || null
+                return (
+                  <div key={product.id} className="shop-card premium">
+                    <Link href={`/shop/${product.slug}`} className="shop-card-image-link">
+                      {image ? (
+                        <img src={image} alt={product.name} className="shop-card-image" />
+                      ) : (
+                        <div className="shop-card-placeholder">🖼️</div>
+                      )}
+                    </Link>
+                    <div className="shop-card-body">
+                      <Link href={`/shop/${product.slug}`} className="shop-card-title">
+                        {product.name}
+                      </Link>
+                      <div className="shop-card-price">
+                        Rs. {Number(price).toLocaleString('en-LK', { minimumFractionDigits: 2 })}
+                      </div>
+                      <button
+                        className="shop-card-btn"
+                        onClick={() => addToCart(product)}
+                      >
+                        Add to Cart <span>&#8599;</span>
+                      </button>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </SiteShell>
   )
 }

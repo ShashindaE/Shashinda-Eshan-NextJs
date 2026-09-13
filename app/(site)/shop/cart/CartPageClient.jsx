@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements, PaymentElement, useStripe, useElements } from '@stripe/react-stripe-js'
+import { SiteShell } from '../../../components/SiteShell'
 
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || '')
 
@@ -85,166 +86,156 @@ export default function CartPageClient() {
     setError(null)
 
     try {
-      // Step 1: Create a Payload cart document so we have a real cartID
-      const cartRes = await fetch('/api/carts', {
+      const res = await fetch('/api/checkout-woo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          currency: 'LKR',
+          email,
           items: cart.map(i => ({
-            product: i.productId,
-            ...(i.variantId ? { variant: i.variantId } : {}),
+            product_id: i.productId,
             quantity: i.quantity,
           })),
         }),
       })
-      const cartData = await cartRes.json()
-      if (!cartRes.ok) {
-        throw new Error(
-          cartData?.errors?.[0]?.message || cartData?.message || 'Failed to create cart'
-        )
-      }
-
-      const cartID = cartData?.doc?.id
-      const cartSecret = cartData?.doc?.secret // only present if guest cart
-      if (!cartID) throw new Error('Cart creation did not return an ID')
-
-      // Step 2: Initiate payment with the real cartID
-      const res = await fetch('/api/payments/stripe/initiate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cartID,
-          ...(cartSecret ? { secret: cartSecret } : {}),
-          customerEmail: email,
-          billingAddress: {
-            line1: 'N/A',
-            city: 'N/A',
-            country: 'LK',
-          },
-        }),
-      })
       const data = await res.json()
-      if (!res.ok) throw new Error(data?.errors?.[0]?.message || data?.message || 'Checkout failed')
-      setClientSecret(data.clientSecret)
+      if (!res.ok) throw new Error(data.message || 'Checkout failed')
+      
+      // Redirect to WooCommerce payment page
+      if (data.paymentUrl) {
+        window.location.href = data.paymentUrl
+      } else {
+        throw new Error('No payment URL returned')
+      }
     } catch (err) {
       setError(err.message)
-    } finally {
       setInitiating(false)
     }
   }
 
   if (cart.length === 0 && !clientSecret) {
     return (
-      <div className="shop-page">
-        <div className="shop-header">
-          <div className="shop-header-inner">
-            <Link href="/shop" className="shop-back-link">← Back to Shop</Link>
+      <SiteShell>
+        <div className="shop-page">
+          <div className="shop-hero">
+            <div className="shop-hero-inner">
+              <div>
+                <p className="eyebrow">
+                  <Link href="/shop" className="shop-back-link">← Back to Shop</Link>
+                </p>
+                <h1>Your <em>Cart</em></h1>
+              </div>
+            </div>
+          </div>
+          <div className="shop-container">
+            <div className="shop-empty">
+              <div className="shop-empty-icon">🛒</div>
+              <h2>Your cart is empty</h2>
+              <p>Add some products to get started.</p>
+              <Link href="/shop" className="shop-card-btn premium" style={{ display: 'inline-block', marginTop: '1.5rem', width: 'auto' }}>
+                Browse Shop <span>&#8599;</span>
+              </Link>
+            </div>
           </div>
         </div>
-        <div className="shop-container">
-          <div className="shop-empty">
-            <div className="shop-empty-icon">🛒</div>
-            <h2>Your cart is empty</h2>
-            <p>Add some products to get started.</p>
-            <Link href="/shop" className="shop-card-btn" style={{ display: 'inline-block', marginTop: '1rem' }}>
-              Browse Shop
-            </Link>
-          </div>
-        </div>
-      </div>
+      </SiteShell>
     )
   }
 
   return (
-    <div className="shop-page">
-      <div className="shop-header">
-        <div className="shop-header-inner">
-          <Link href="/shop" className="shop-back-link">← Back to Shop</Link>
-          <h1 className="shop-title" style={{ fontSize: '1.4rem' }}>Your Cart</h1>
+    <SiteShell>
+      <div className="shop-page">
+        <div className="shop-hero">
+          <div className="shop-hero-inner">
+            <div>
+              <p className="eyebrow">
+                <Link href="/shop" className="shop-back-link">← Back to Shop</Link>
+              </p>
+              <h1>Your <em>Cart</em></h1>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className="shop-container">
-        <div className="shop-cart-layout">
-          {/* Cart items */}
-          {!clientSecret && (
-            <div className="shop-cart-items">
+        <div className="shop-container">
+          <div className="shop-cart-layout">
+            {/* Cart items */}
+            {!clientSecret && (
+              <div className="shop-cart-items">
+                {cart.map((item, idx) => (
+                  <div key={idx} className="shop-cart-item premium">
+                    {item.image && (
+                      <img src={item.image} alt={item.title} className="shop-cart-item-img" />
+                    )}
+                    <div className="shop-cart-item-info">
+                      <div className="shop-cart-item-title">{item.title}</div>
+                      <div className="shop-cart-item-price">
+                        Rs. {Number(item.price).toLocaleString('en-LK', { minimumFractionDigits: 2 })}
+                      </div>
+                      <div className="shop-quantity-controls" style={{ marginTop: '0.5rem' }}>
+                        <button onClick={() => updateQty(idx, -1)} className="shop-qty-btn">−</button>
+                        <span className="shop-qty-val">{item.quantity}</span>
+                        <button onClick={() => updateQty(idx, 1)} className="shop-qty-btn">+</button>
+                        <button onClick={() => removeItem(idx)} className="shop-remove-btn">Remove</button>
+                      </div>
+                    </div>
+                    <div className="shop-cart-item-subtotal">
+                      Rs. {(item.price * item.quantity).toLocaleString('en-LK', { minimumFractionDigits: 2 })}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* Summary & payment */}
+            <div className="shop-cart-summary premium">
+              <div className="shop-cart-summary-title">Order Summary</div>
+
               {cart.map((item, idx) => (
-                <div key={idx} className="shop-cart-item">
-                  {item.image && (
-                    <img src={item.image} alt={item.title} className="shop-cart-item-img" />
-                  )}
-                  <div className="shop-cart-item-info">
-                    <div className="shop-cart-item-title">{item.title}</div>
-                    <div className="shop-cart-item-price">
-                      Rs. {Number(item.price).toLocaleString('en-LK', { minimumFractionDigits: 2 })}
-                    </div>
-                    <div className="shop-quantity-controls" style={{ marginTop: '0.5rem' }}>
-                      <button onClick={() => updateQty(idx, -1)} className="shop-qty-btn">−</button>
-                      <span className="shop-qty-val">{item.quantity}</span>
-                      <button onClick={() => updateQty(idx, 1)} className="shop-qty-btn">+</button>
-                      <button onClick={() => removeItem(idx)} className="shop-remove-btn">Remove</button>
-                    </div>
-                  </div>
-                  <div className="shop-cart-item-subtotal">
-                    Rs. {(item.price * item.quantity).toLocaleString('en-LK', { minimumFractionDigits: 2 })}
-                  </div>
+                <div key={idx} className="shop-summary-line">
+                  <span>{item.title} × {item.quantity}</span>
+                  <span>Rs. {(item.price * item.quantity).toLocaleString('en-LK', { minimumFractionDigits: 2 })}</span>
                 </div>
               ))}
-            </div>
-          )}
 
-          {/* Summary & payment */}
-          <div className="shop-cart-summary">
-            <div className="shop-cart-summary-title">Order Summary</div>
-
-            {cart.map((item, idx) => (
-              <div key={idx} className="shop-summary-line">
-                <span>{item.title} × {item.quantity}</span>
-                <span>Rs. {(item.price * item.quantity).toLocaleString('en-LK', { minimumFractionDigits: 2 })}</span>
+              <div className="shop-summary-total">
+                <span>Total</span>
+                <span>Rs. {subtotal.toLocaleString('en-LK', { minimumFractionDigits: 2 })}</span>
               </div>
-            ))}
 
-            <div className="shop-summary-total">
-              <span>Total</span>
-              <span>Rs. {subtotal.toLocaleString('en-LK', { minimumFractionDigits: 2 })}</span>
-            </div>
+              {error && <div className="shop-payment-error">{error}</div>}
 
-            {error && <div className="shop-payment-error">{error}</div>}
-
-            {!clientSecret ? (
-              <>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  className="shop-email-input"
-                />
-                <button
-                  onClick={initiateCheckout}
-                  disabled={initiating}
-                  className="shop-pay-btn"
+              {!clientSecret ? (
+                <>
+                  <input
+                    type="email"
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+                    className="shop-email-input"
+                  />
+                  <button
+                    onClick={initiateCheckout}
+                    disabled={initiating}
+                    className="shop-pay-btn premium"
+                  >
+                    {initiating ? 'Preparing…' : 'Proceed to Checkout'} <span>&#8599;</span>
+                  </button>
+                </>
+              ) : (
+                <Elements
+                  stripe={stripePromise}
+                  options={{ clientSecret, appearance: { theme: 'night' } }}
                 >
-                  {initiating ? 'Preparing…' : 'Proceed to Payment'}
-                </button>
-              </>
-            ) : (
-              <Elements
-                stripe={stripePromise}
-                options={{ clientSecret, appearance: { theme: 'night' } }}
-              >
-                <CheckoutForm
-                  clientSecret={clientSecret}
-                  cart={cart}
-                  customerEmail={email}
-                />
-              </Elements>
-            )}
+                  <CheckoutForm
+                    clientSecret={clientSecret}
+                    cart={cart}
+                    customerEmail={email}
+                  />
+                </Elements>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </SiteShell>
   )
 }

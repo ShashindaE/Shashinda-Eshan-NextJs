@@ -1,5 +1,4 @@
-import { getPayload } from 'payload'
-import configPromise from '@payload-config'
+import { getProducts } from '@/lib/woocommerce'
 import ShopPageClient from './ShopPageClient'
 
 export const metadata = {
@@ -13,17 +12,9 @@ export default async function ShopPage() {
   let products = []
 
   try {
-    const payload = await getPayload({ config: configPromise })
-    const res = await payload.find({
-      collection: 'products',
-      where: { _status: { equals: 'published' } },
-      sort: '-createdAt',
-      limit: 100,
-      depth: 2,
-    })
-    products = res.docs || []
+    products = await getProducts('?status=publish&per_page=100')
   } catch (err) {
-    console.error('Failed to load products in ShopPage:', err)
+    console.error('Failed to load products from WooCommerce in ShopPage:', err)
   }
 
   return <ShopPageClient products={products} />

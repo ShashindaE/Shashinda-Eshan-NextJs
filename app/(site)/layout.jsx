@@ -1,4 +1,5 @@
 import '../globals.css';
+import '../shop.css';
 import { Analytics } from '@vercel/analytics/react';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 
@@ -6,9 +7,6 @@ export const metadata = {
   title: 'Shashinda - Creative Visionary',
   description: 'Designer, innovator and digital creative building bold ideas into reality.'
 };
-
-const GA_ID  = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
 
 export default function SiteLayout({ children }) {
   return (
@@ -21,7 +19,7 @@ export default function SiteLayout({ children }) {
           rel="stylesheet"
         />
         {/* Google Tag Manager — loads only when GTM_ID is set */}
-        {GTM_ID && <GoogleTagManager gtmId={GTM_ID} />}
+        {process.env.NEXT_PUBLIC_GTM_ID && <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />}
       </head>
       <body>
         {children}
@@ -30,7 +28,7 @@ export default function SiteLayout({ children }) {
         <Analytics />
 
         {/* Google Analytics 4 — loads only when GA_ID is set */}
-        {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />}
       </body>
     </html>
   );

@@ -249,6 +249,14 @@ export interface Post {
    * Add topic tags to this post.
    */
   tags?: (number | Tag)[] | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+    /**
+     * Maximum upload file size: 12MB. Recommended file size for images is <500KB.
+     */
+    image?: (number | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -771,6 +779,13 @@ export interface PostsSelect<T extends boolean = true> {
   featured?: T;
   categories?: T;
   tags?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

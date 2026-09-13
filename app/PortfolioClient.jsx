@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ScrollExperience from './ScrollExperience';
+import { Header, MobileMenu, FixedUI, ArrowLink } from './components/SiteShell';
 
 const sections = ['home', 'about', 'services', 'work', 'testimonials', 'blog', 'contact'];
 const experiences = [
@@ -348,77 +349,7 @@ function ServicesSection({ pageClass, onSelectService }) {
   );
 }
 
-function ArrowLink({ children, href = '#', onClick }) {
-  return (
-    <a className="arrow-link" href={href} onClick={onClick}>
-      {children}<span>&#8599;</span>
-    </a>
-  );
-}
 
-function Header({ activeSection, mobileMenuOpen, onToggleMenu }) {
-  return (
-    <header className={`site-header ${activeSection > 0 ? 'is-solid' : ''}`}>
-      <a className="brand" href="#home">
-        <img src="/logo-dark.png" alt="Shashinda Eshan" />
-      </a>
-      <nav aria-label="Main navigation">
-        {sections.map((section, index) => (
-          <a className={activeSection === index ? 'active' : ''} href={`#${section}`} key={section}>{section}</a>
-        ))}
-      </nav>
-      <a className="phone" href="tel:+94769415015">+94 76 941 5015</a>
-      <button
-        type="button"
-        className={`hamburger ${mobileMenuOpen ? 'is-active' : ''}`}
-        aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-        aria-expanded={mobileMenuOpen}
-        onClick={onToggleMenu}
-      >
-        <span /><span /><span />
-      </button>
-    </header>
-  );
-}
-
-function MobileMenu({ isOpen, activeSection, onClose }) {
-  return (
-    <div className={`mobile-menu ${isOpen ? 'is-open' : ''}`} aria-hidden={!isOpen}>
-      <nav aria-label="Mobile navigation">
-        {sections.map((section, index) => (
-          <a className={activeSection === index ? 'active' : ''} href={`#${section}`} key={section} onClick={onClose}>{section}</a>
-        ))}
-      </nav>
-      <div className="mobile-menu-footer">
-        <a className="mobile-menu-phone" href="tel:+94769415015">+94 76 941 5015</a>
-        <div className="mobile-menu-socials">
-          <a href="https://www.facebook.com/shashindaesh/" aria-label="Facebook">f</a>
-          <a href="https://www.linkedin.com/in/shashinda-eshan" aria-label="LinkedIn">in</a>
-          <a href="https://www.instagram.com/shashindaeshan" aria-label="Instagram">&#9678;</a>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function FixedUI({ activeSection }) {
-  return (
-    <>
-      <aside className="social-sidebar" aria-hidden="true">
-        <span className="sidebar-line" />
-        <a href="https://www.facebook.com/shashindaesh/" aria-label="Facebook">f</a>
-        <a href="https://www.linkedin.com/in/shashinda-eshan" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/shashindaeshan" aria-label="Instagram">&#9678;</a>
-        <span className="sidebar-line" />
-      </aside>
-      <div className="copyright">&#169; Shashinda.2025</div>
-      <div className="language"><span>&#127468;&#127463;</span> EN <b>&#8963;</b></div>
-      <div className="progress-rail">
-        <span style={{ height: `${((activeSection + 1) / sections.length) * 100}%` }} />
-      </div>
-    </>
-  );
-}
 
 function BlogList({ posts }) {
   if (!posts || posts.length === 0) {
@@ -715,13 +646,15 @@ export function PortfolioClient({ blogPosts, featuredPost }) {
             activeSection={incomingSection ?? activeSection}
             mobileMenuOpen={mobileMenuOpen}
             onToggleMenu={() => setMobileMenuOpen((open) => !open)}
+            isHome={true}
           />
           <MobileMenu
             isOpen={mobileMenuOpen}
             activeSection={incomingSection ?? activeSection}
             onClose={() => setMobileMenuOpen(false)}
+            isHome={true}
           />
-          <FixedUI activeSection={incomingSection ?? activeSection} />
+          <FixedUI activeSection={incomingSection ?? activeSection} isHome={true} />
           <PageContent
             activeSection={activeSection}
             incomingSection={incomingSection}

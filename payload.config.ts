@@ -176,14 +176,16 @@ export default buildConfig({
       collections: ['posts'],
       uploadsCollection: 'media',
       tabbedUI: false,
-      generateTitle: ({ doc }) => {
-        const title = (doc as any)?.title || ''
+      generateTitle: (args) => {
+        console.log('generateTitle args:', JSON.stringify(args, (k, v) => k === 'req' || k === 'collectionConfig' || k === 'globalConfig' ? undefined : v, 2))
+        const doc = args.doc || args.data || args.reqData || args
+        const title = doc?.title?.value || doc?.title || ''
         return title ? `${title} — Shashinda Eshan` : 'Shashinda Eshan'
       },
       generateDescription: ({ doc }) =>
-        (doc as any)?.excerpt || '',
+        doc?.excerpt?.value || doc?.excerpt || '',
       generateImage: ({ doc }) => {
-        const cover = (doc as any)?.coverImage
+        const cover = doc?.coverImage?.value || doc?.coverImage
         return typeof cover === 'object' ? cover?.id : cover
       },
     }),

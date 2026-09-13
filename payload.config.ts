@@ -177,8 +177,7 @@ export default buildConfig({
       uploadsCollection: 'media',
       tabbedUI: false,
       generateTitle: (args) => {
-        console.log('generateTitle args:', JSON.stringify(args, (k, v) => k === 'req' || k === 'collectionConfig' || k === 'globalConfig' ? undefined : v, 2))
-        const doc = args.doc || args.data || args.reqData || args
+        const doc = args.doc || (args as any)
         const title = doc?.title?.value || doc?.title || ''
         return title ? `${title} — Shashinda Eshan` : 'Shashinda Eshan'
       },

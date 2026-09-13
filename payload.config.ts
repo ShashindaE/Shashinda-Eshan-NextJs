@@ -175,6 +175,7 @@ export default buildConfig({
     seoPlugin({
       collections: ['posts'],
       uploadsCollection: 'media',
+      tabbedUI: false,
       generateTitle: ({ doc }) =>
         `${(doc as any)?.title?.value ?? ''} — Shashinda Eshan`,
       generateDescription: ({ doc }) =>

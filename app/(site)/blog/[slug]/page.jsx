@@ -23,13 +23,30 @@ export async function generateMetadata({ params }) {
   const { slug } = await params
   const post = await getPost(slug)
   if (!post) return { title: 'Post Not Found' }
+
+  // Prefer plugin-managed meta fields; fall back to post's own fields
+  const metaTitle       = post.meta?.title       || `${post.title} \u2014 Shashinda Eshan`
+  const metaDescription = post.meta?.description || post.excerpt || ''
+  const metaImageUrl    =
+    post.meta?.image?.thumbnailURL ||
+    post.meta?.image?.url          ||
+    post.coverImage?.thumbnailURL  ||
+    post.coverImage?.url           ||
+    null
+
   return {
-    title: `${post.title} \u2014 Shashinda Eshan`,
-    description: post.excerpt || '',
+    title: metaTitle,
+    description: metaDescription,
     openGraph: {
-      title: post.title,
-      description: post.excerpt || '',
-      images: post.coverImage?.thumbnailURL ? [{ url: post.coverImage.thumbnailURL }] : post.coverImage?.url ? [{ url: post.coverImage.url }] : [],
+      title:       metaTitle,
+      description: metaDescription,
+      images: metaImageUrl ? [{ url: metaImageUrl }] : [],
+    },
+    twitter: {
+      card:        'summary_large_image',
+      title:       metaTitle,
+      description: metaDescription,
+      images: metaImageUrl ? [metaImageUrl] : [],
     },
   }
 }

@@ -4,6 +4,7 @@ import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { cloudinaryStorage } from 'payload-cloudinary'
 import { ecommercePlugin } from '@payloadcms/plugin-ecommerce'
 import { stripeAdapter } from '@payloadcms/plugin-ecommerce/payments/stripe'
+import { seoPlugin } from '@payloadcms/plugin-seo'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
@@ -169,6 +170,17 @@ export default buildConfig({
           }),
         ],
       },
+    }),
+
+    seoPlugin({
+      collections: ['posts'],
+      uploadsCollection: 'media',
+      generateTitle: ({ doc }) =>
+        `${(doc as any)?.title?.value ?? ''} — Shashinda Eshan`,
+      generateDescription: ({ doc }) =>
+        (doc as any)?.excerpt?.value ?? '',
+      generateImage: ({ doc }) =>
+        (doc as any)?.coverImage?.value,
     }),
   ],
 
